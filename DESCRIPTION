@@ -1,7 +1,7 @@
 Package: dang
 Type: Package
 Title: Dang Associated New Goodies
-Version: 0.0.1
+Version: 0.0.2
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: A collection of utility functions.
