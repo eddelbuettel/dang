@@ -1,0 +1,2 @@
+
+silent <- function(...) suppressMessages(library(...))
