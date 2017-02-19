@@ -11,15 +11,15 @@
 ##' \code{POSIXct}.
 ##' @author Dirk Eddelbuettel
 as.data.table.xts <- function(x) {
-    if (requireNamespace("zoo", quietly=TRUE)) {
+    if (requireNamespace("zoo", quietly=TRUE) && requireNamespace("data.table", quietly=TRUE)) {
         pt <- time <- micros <- NULL        # to make R CMD check happy
-        dt <-  data.table(date=as.IDate(zoo::index(x)),
-                          time=as.ITime(zoo::index(x)),
-                          micros=round(1e6*(as.numeric(zoo::index(x)-trunc(zoo::index(x))))),
-                          pt=as.numeric(zoo::index(x)),
+        dt <-  data.table::data.table(date = data.table::as.IDate(zoo::index(x)),
+                                      time = data.table::as.ITime(zoo::index(x)),
+                                      micros = round(1e6*(as.numeric(zoo::index(x) - trunc(zoo::index(x))))),
+                                      pt = as.numeric(zoo::index(x)),
                           zoo::coredata(x))
-        setNumericRounding(0)
-        setkey(dt, pt, date, time, micros)
+        data.table::setNumericRounding(0)
+        data.table::setkey(dt, pt, date, time, micros)
         dt
     } else {
         stop("Cannot covert to 'data.table' without the 'zoo' package/", call.=FALSE)

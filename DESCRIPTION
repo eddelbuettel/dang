@@ -1,12 +1,12 @@
 Package: dang
 Type: Package
 Title: Dang Associated New Goodies
-Version: 0.0.3
+Version: 0.0.4
+Date: 2017-02-19
 Author: Dirk Eddelbuettel
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: A collection of utility functions.
-Imports: data.table
-Suggests: anytime, zoo
+Suggests: anytime, data.table, zoo
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
