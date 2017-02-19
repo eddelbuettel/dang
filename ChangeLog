@@ -1,6 +1,6 @@
 2017-02-19  Dirk Eddelbuettel  <edd@debian.org>
 
-	* DESCRIPTION: Release 0.0.3
+	* DESCRIPTION: Release 0.0.4
 
 	* R/*R: Added roxygen documentation
 	* man/*Rd: Idem
@@ -10,6 +10,8 @@
 	* R/*R: Reworked dependency into optional and tested
 
 2017-02-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Release 0.0.3
 
 	* R/formats.R (ymd): New function
 	* man/ymd.R: Idem
