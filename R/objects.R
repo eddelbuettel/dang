@@ -1,4 +1,18 @@
-
+##' List object and memory used by these objects
+##'
+##' These helper functions have evolved over the years; some were also
+##' posted on StackOverflow in response to \url{http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session}
+##' @title List largest objects and show memory use
+##' @param pos Position in search path, defaults to 1
+##' @param pattern Pattern argument pass on to \code{ls}
+##' @param order.by Optional sort order column
+##' @param decreasing Optional switch for decreasing or increasing
+##' sort order
+##' @param head Optional switch to show \code{head(..., n)}
+##' @param n Number of elements to show, default to 5
+##' @return The displayed data.frame is returned to, the main purpose
+##'  effect however is the displayed information
+##' @author Dirk Eddelbuettel
 ls.objects <- function (pos = 1, pattern, order.by,
                         decreasing=FALSE, head=FALSE, n=5) {
     names <- ls(pos = pos, pattern = pattern)
@@ -26,12 +40,15 @@ ls.objects <- function (pos = 1, pattern, order.by,
     }
 }
 
+##' @rdname ls.objects
+##' @param ... Passed through from \code{lsos} to \code{ls.objects}
 lsos <- function(..., n=10) {
     ls.objects(..., order.by="Size", decreasing=TRUE, head=TRUE, n=n)
 }
 
-
-## SO response to my http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session
+##' @rdname ls.objects
+##' @param sort Sort columns, defauls to \sQuote{size}
+##' @param limit Optional cap on displayed number of items
 showMemoryUse <- function(sort="size", decreasing=FALSE, limit) {
     objectList <- ls(parent.frame())
 
@@ -50,10 +67,13 @@ showMemoryUse <- function(sort="size", decreasing=FALSE, limit) {
 
     memListing <- data.frame(objectName=names(memListing),memorySize=memListing,row.names=NULL)
 
-    if (sort=="alphabetical") memListing <- memListing[order(memListing$objectName,decreasing=decreasing),]
-    else memListing <- memListing[order(memoryUse,decreasing=decreasing),] #will run if sort not specified or "size"
+    if (sort=="alphabetical")
+        memListing <- memListing[order(memListing$objectName,decreasing=decreasing),]
+    else
+        ## will run if sort not specified or "size"
+        memListing <- memListing[order(memoryUse,decreasing=decreasing),]
 
-    if(!missing(limit)) memListing <- memListing[1:limit,]
+    if (!missing(limit)) memListing <- memListing[1:limit,]
 
     print(memListing, row.names=FALSE)
     return(invisible(memListing))

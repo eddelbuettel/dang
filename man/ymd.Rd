@@ -16,8 +16,10 @@ A character object formatted as \sQuote{YYYYMMDD}
 Format a Date(time) object as ymd
 }
 \examples{
-ymd(anytime("2016-09-01 10:11:12.123456"))
-ymd(anydate("2016-Sep-01"))
+if (requireNamespace("anytime", quietly=TRUE)) {
+   ymd(anytime::anytime("2016-09-01 10:11:12.123456"))
+   ymd(anytime::anydate("2016-Sep-01"))
+}
 }
 \author{
 Dirk Eddelbuettel

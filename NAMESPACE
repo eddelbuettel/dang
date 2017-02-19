@@ -1,1 +1,3 @@
+import("data.table")
+importFrom("utils", "head", "object.size", "tail")
 exportPattern("^[[:alpha:]]+")
