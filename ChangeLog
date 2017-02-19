@@ -1,0 +1,37 @@
+2017-02-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Release 0.0.3
+
+	* R/*R: Added roxygen documentation
+	* man/*Rd: Idem
+
+	* NAMESPACE: No more Imports
+	* DESCRIPTION: All packages optional via Suggests
+	* R/*R: Reworked dependency into optional and tested
+
+2017-02-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/formats.R (ymd): New function
+	* man/ymd.R: Idem
+
+	* R/datatable.R (as.data.table.xts): Expanded
+
+2016-12-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/load.R (silent): New function
+
+	* R/print.R (print.xts): Improvements
+
+2016-11-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Release 0.0.2
+
+	* R/print.R (print.xts): Added
+
+2016-11-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION: Initial release 0.0.1
+
+	* R/datatable.R (as.data.table.xts): First version
+	* R/objects.R (ls.objects, lsos, showMemoryUse): Idem
+
