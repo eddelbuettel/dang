@@ -4,7 +4,7 @@
 \alias{as.data.table.xts}
 \title{Convert an xts object into a data.table}
 \usage{
-\method{as.data.table}{xts}(x)
+as.data.table.xts(x)
 }
 \arguments{
 \item{x}{An xts object}
