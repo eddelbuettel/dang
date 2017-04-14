@@ -25,3 +25,23 @@ as.data.table.xts <- function(x) {
         stop("Cannot covert to 'data.table' without the 'zoo' package/", call.=FALSE)
     }
 }
+
+## cf http://stackoverflow.com/a/27358897/143305
+.gsee.as.data.table.xts <- function(x, ...) {
+    cn <- colnames(x)
+    sscn <- strsplit(cn, "\\.")
+    indexClass(x) <- c('POSIXct', 'POSIXt') #coerce index to POSIXct
+    DT <- data.table(time=index(x), coredata(x))
+    ##DT <- data.table(IDateTime(index(x)), coredata(x))
+
+    ## If there is a Symbol embedded in the colnames, strip it out and make it a
+    ## column
+    if (all(sapply(sscn, "[", 1) == sscn[[1]][1])) {
+        Symbol <- sscn[[1]][1]
+        setnames(DT, names(DT)[-1], sub(paste0(Symbol, "."), "", cn))
+        DT <- DT[, Symbol:=Symbol]
+        setkey(DT, Symbol, time)[]
+    } else {
+        setkey(DT, time)[]
+    }
+}
