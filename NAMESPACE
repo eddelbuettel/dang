@@ -1,2 +1,5 @@
-importFrom("utils", "head", "object.size", "tail")
 exportPattern("^[[:alpha:]]+")
+importFrom("utils", "head", "object.size", "tail")
+importFrom("grDevices", "rgb", "xy.coords")
+importFrom("graphics", "lines", "plot")
+importFrom("stats", "time")

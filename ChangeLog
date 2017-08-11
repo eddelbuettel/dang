@@ -1,3 +1,11 @@
+2017-08-11  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.0.6
+
+	* NAMESPACE: Additional imports from base R, no other imports
+
+	* R/datatable.R (as.data.table.xts): More careful namespace use
+
 2017-03-16  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.0.5
