@@ -4,14 +4,17 @@
 \alias{assignFormals}
 \title{Assign formal arguments from function}
 \usage{
-assignFormals(f)
+assignFormals(f, env = .GlobalEnv)
 }
 \arguments{
 \item{f}{A function}
+
+\item{env}{An environment to assign the values to, defaults
+to global environment,}
 }
 \value{
 Nothing, but a side effect of assignment in global
- environment
+environment
 }
 \description{
 Debugging helper to assign formals from function

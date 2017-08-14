@@ -1,3 +1,10 @@
+2017-08-14  Dirk Eddelbuettel  <edd@debian.org>
+
+	* NAMESPACE: Export print.xts as S3 method
+
+	* R/functions.R (assignFormals): New argument env
+	* man/assignFormals.Rd: Ditto
+
 2017-08-11  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.0.6

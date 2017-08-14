@@ -1,5 +1,8 @@
-exportPattern("^[[:alpha:]]+")
 importFrom("utils", "head", "object.size", "tail")
 importFrom("grDevices", "rgb", "xy.coords")
 importFrom("graphics", "lines", "plot")
 importFrom("stats", "time")
+
+exportPattern("^[[:alpha:]]+")
+
+S3method(print, xts)
