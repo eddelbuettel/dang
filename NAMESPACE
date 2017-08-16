@@ -1,4 +1,4 @@
-importFrom("utils", "head", "object.size", "tail")
+importFrom("utils", "head", "object.size", "tail", "download.file")
 importFrom("grDevices", "rgb", "xy.coords")
 importFrom("graphics", "lines", "plot")
 importFrom("stats", "time")
