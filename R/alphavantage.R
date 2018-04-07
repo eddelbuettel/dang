@@ -13,5 +13,8 @@ alphavantage <- function(sym) {
                   "apikey=", getOption("alphavantageKey", "demo"), "&",
                   "datatype=csv&",
                   "outputsize=compact")
-    data <- fread(cmd, showProgress=FALSE)
+    if (!requireNamespace("data.table", quietly=TRUE)) {
+        stop("The 'data.table' package needs to be installed.", call. = FALSE)
+    }
+    data <- data.table::fread(cmd, showProgress=FALSE)
 }
