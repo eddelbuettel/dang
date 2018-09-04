@@ -1,11 +1,11 @@
 Package: dang
 Type: Package
 Title: Dang Associated New Goodies
-Version: 0.0.7
+Version: 0.0.8
 Date: 2017-08-16
-Author: Dirk Eddelbuettel
+Author: Dirk Eddelbuettel with contributions by Brodie Gaslam and others
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: A collection of utility functions.
 Suggests: anytime, data.table, zoo, xts, TTR, quantmod
 License: GPL (>= 2)
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0

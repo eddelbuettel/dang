@@ -6,8 +6,8 @@
 \alias{showMemoryUse}
 \title{List largest objects and show memory use}
 \usage{
-ls.objects(pos = 1, pattern, order.by, decreasing = FALSE, head = FALSE,
-  n = 5)
+ls.objects(pos = 1, pattern, order.by, decreasing = FALSE,
+  head = FALSE, n = 5)
 
 lsos(..., n = 10)
 

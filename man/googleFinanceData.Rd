@@ -4,8 +4,8 @@
 \alias{googleFinanceData}
 \title{Historical Price Data Download from Google Finance}
 \usage{
-googleFinanceData(sym, current = TRUE, sy = 2005, sm = 1, sd = 1, ey,
-  em, ed)
+googleFinanceData(sym, current = TRUE, sy = 2005, sm = 1, sd = 1,
+  ey, em, ed)
 }
 \arguments{
 \item{sym}{A character string for a (tradeable) symbol}
