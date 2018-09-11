@@ -34,7 +34,7 @@
 ##' @param cache.life A numeric timeout, defaults to one day
 ##' @return Nothing, the sideffect of the display is the main effect
 ##' @author Brodie Gaslam (with minor modifications by Dirk Eddelbuettel)
-checkCRAN <- function(email, cache, cache.life=24 * 3600) {
+checkCRANStatus <- function(email, cache, cache.life=24 * 3600) {
 
     if (missing(cache)) cache <- tempfile(pattern="cran-status", fileext=".rds")
 
