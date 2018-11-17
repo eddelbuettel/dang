@@ -6,8 +6,8 @@
 \alias{showMemoryUse}
 \title{List largest objects and show memory use}
 \usage{
-ls.objects(pos = 1, pattern, order.by, decreasing = FALSE,
-  head = FALSE, n = 5)
+ls.objects(pos = 1, pattern, order.by, decreasing = FALSE, head = FALSE,
+  n = 5)
 
 lsos(..., n = 10)
 
@@ -42,7 +42,8 @@ List object and memory used by these objects
 }
 \details{
 These helper functions have evolved over the years; some were also
-posted on StackOverflow in response to \url{http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session}
+posted on StackOverflow in response to
+\url{http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session}
 }
 \author{
 Dirk Eddelbuettel

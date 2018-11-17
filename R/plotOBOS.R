@@ -86,17 +86,10 @@ plotOBOS <- function(symbol, n=50, type=c("sma", "ema", "zlema", "hma"),
         fairlylight <- rgb(189/255, 215/255, 231/255, alpha=0.625) # aka blues5[2]
         verylight <- rgb(239/255, 243/255, 255/255, alpha=0.625) # aka blues5[1]
         dark <- rgb(8/255, 81/255, 156/255, alpha=0.625) # aka blues5[5]
-        ## buglet in xts 0.10-0 requires the assigns here
-        assign("fairlylight", fairlylight, envir = .GlobalEnv)
-        assign("verylight", verylight, envir = .GlobalEnv)
-        assign("dark", dark, envir = .GlobalEnv)
     } else {
         fairlylight <- rgb(204/255, 204/255, 204/255, alpha=0.5)  # two suitable grays, alpha-blending at 50%
         verylight <- rgb(242/255, 242/255, 242/255, alpha=0.5)
         dark <- 'black'
-        assign("fairlylight", fairlylight, envir = .GlobalEnv)
-        assign("verylight", verylight, envir = .GlobalEnv)
-        assign("dark", dark, envir = .GlobalEnv)
     }
 
     plot(x, ylim=range(range(x, xd+2*xv, xd-2*xv, na.rm=TRUE)), main=title, sub=sub,
@@ -106,6 +99,5 @@ plotOBOS <- function(symbol, n=50, type=c("sma", "ema", "zlema", "hma"),
     xts::addPolygon(xts::xts(cbind(xyd$y-xyv$y, xyd$y-2*xyv$y), order.by=zoo::index(x)), on=1, col=fairlylight)  # lower
     lines(xd, lwd=2, col=fairlylight)   # central smooted location
     lines(x, lwd=3, col=dark)           # actual price, thicker
-    invisible(NULL)
 }
 
