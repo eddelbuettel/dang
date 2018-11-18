@@ -1,4 +1,13 @@
+2018-11-18  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Added
+
+	* R/objects.R: Add note with credit to P Pikal and D Hinds as we do
+	on the nine-year old StackOverflow post that is behind it
+
 2018-11-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.0.9
 
 	* R/plotOBOS.R: Minor cleanup now that a newer xts allows it
 
