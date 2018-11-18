@@ -12,8 +12,9 @@
 ##' @param head Optional switch to show \code{head(..., n)}
 ##' @param n Number of elements to show, default to 5
 ##' @return The displayed data.frame is returned to, the main purpose
-##'  effect however is the displayed information
-##' @author Dirk Eddelbuettel
+##' effect however is the displayed information
+##' @author Dirk Eddelbuettel, based on and extending code in mailing list
+##' posts by Petr Pikal and David Hinds
 ls.objects <- function (pos = 1, pattern, order.by,
                         decreasing=FALSE, head=FALSE, n=5) {
     names <- ls(pos = pos, pattern = pattern)

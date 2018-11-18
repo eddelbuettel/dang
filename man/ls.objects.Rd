@@ -35,7 +35,7 @@ sort order}
 }
 \value{
 The displayed data.frame is returned to, the main purpose
- effect however is the displayed information
+effect however is the displayed information
 }
 \description{
 List object and memory used by these objects
@@ -46,5 +46,6 @@ posted on StackOverflow in response to
 \url{http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session}
 }
 \author{
-Dirk Eddelbuettel
+Dirk Eddelbuettel, based on and extending code in mailing list
+posts by Petr Pikal and David Hinds
 }
