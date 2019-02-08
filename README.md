@@ -4,15 +4,16 @@ Dang: Dang Assorted New Goodies
 
 ### About
 
-This packages contains a small collection of helper functions I have been keeping around.  Some of
-these have already appeared in a
-[StackOverflow answer in 2009](https://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session)
-or a [blog post in 2011](http://dirk.eddelbuettel.com/blog/2011/01/16/).  Others are more local and less 
-refined,
+This packages contains a small collection of helper functions I have been keeping around.
+Some of these have already appeared in a [StackOverflow answer in
+2009](https://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session)
+or a [blog post in 2011](http://dirk.eddelbuettel.com/blog/2011/01/16/).  Others are more
+local and less refined.  Some may even be redundant---it is simply a collection of utility
+function I use(d) at some point.
 
 ### Status
 
-The package tests cleanly as you would expect. It has not yet been uploaded to CRAN but this may change.
+The package tests cleanly as you would expect. 
 
 ### Author
 

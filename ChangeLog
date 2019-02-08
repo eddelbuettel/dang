@@ -17,7 +17,8 @@
 
 	* DESCRIPTION (Version, Date): Release 0.0.8
 
-	* R/checkCRAN.R: Added Brodie's excellent function
+	* R/checkCRAN.R: Added Brodie's excellent function (with some minor
+	modifications)
 
 2018-04-07  Dirk Eddelbuettel  <edd@debian.org>
 
