@@ -23,19 +23,18 @@ demotivate <- function(x, width = NULL) {
              #"Best not to dwell on what your R-using colleagues really think of you.",
              "\"Friends don't let friends use instrumental variables.\" Unknown.",
              "This will be a lot easier to do in the next version of Stata. Kerching $$$$$ !",
-             "The fact is most papers are rejected",
+             "The fact is most papers are rejected.",
              #"It's not too late to learn Python",
              "If only you had taken a few more math courses you could have been someone. You could have been a contender.",
-             "Life is full of emptiness",
+             "Life is full of emptiness.",
              "\"Imagine how hard physics would be if electrons had feelings.\" Richard Feynmann. Welcome to our world, Dick.",
              "\"There are no routine statistical questions only questionable statistical routines.\" David Cox. Here's looking at you, kid.",
-             "\"But our preferred model shows...\"  lmao, gets me everytime",
-             "\"Erode gormless sin\" is an anagram for \"regression models\" curiously enough",
+             "\"But our preferred model shows...\"  lmao, gets me everytime.",
+             "\"Erode gormless sin\" is an anagram for \"regression models\" curiously enough.",
              "Don't worry: there is a behavioral economics interpretation of your results.",
              "Have you ever considered letting Bayes into your life?" )
 
-    if (missing(x)) x <- sample(length(txt), 1)
-    if (x < 1 || x > length(txt)) x <- sample(length(txt), 1)
+    if (missing(x) || x < 1 || x > length(txt)) x <- sample(length(txt), 1)
     if (is.null(width)) width <- 0.9 * getOption("width")
     if (width < 10) stop("'width' must be greater than 10", call.=FALSE)
     invisible(sapply(strwrap(txt[x], width), cat, "\n"))
