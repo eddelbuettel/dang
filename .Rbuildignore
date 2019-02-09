@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 .*\.tar\.gz$
 .travis.yml$
+R/lsb.R

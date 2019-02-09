@@ -1,7 +1,7 @@
-importFrom("utils", "head", "object.size", "tail", "download.file")
+importFrom("utils", "head", "object.size", "tail", "download.file", "read.table")
 importFrom("grDevices", "rgb", "xy.coords")
 importFrom("graphics", "lines", "plot")
-importFrom("stats", "time")
+importFrom("stats", "time", "runif")
 
 exportPattern("^[[:alpha:]]+")
 

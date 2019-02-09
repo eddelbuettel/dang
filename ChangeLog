@@ -1,3 +1,11 @@
+2019-02-08  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/demotivate.R (demotivate): New 'demotivating' function ported
+	from the Stata command by Kevin Denny.
+	* man/demotivate.Rd: Documentation
+
+	* NAMESPACE: Additional imports
+
 2018-11-18  Dirk Eddelbuettel  <edd@debian.org>
 
 	* README.md: Added
