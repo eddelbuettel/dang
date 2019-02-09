@@ -1,3 +1,8 @@
+2019-02-09  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/demotivate.R (demotivate): Simplified code and commented out two
+	language-comparison based ones reflective of the function upbringing
+
 2019-02-08  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/demotivate.R (demotivate): New 'demotivating' function ported
