@@ -1,7 +1,8 @@
 2019-02-09  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/demotivate.R (demotivate): Simplified code and commented out two
-	language-comparison based ones reflective of the function upbringing
+	language-comparison based ones reflective of the function upbringing;
+	use single quotes instead of escaped double quotes
 
 2019-02-08  Dirk Eddelbuettel  <edd@debian.org>
 

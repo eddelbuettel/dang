@@ -13,7 +13,7 @@
 ##' @author Dirk Eddelbuettel for this function, and Kevin Denny for the 'Stata' original.
 ##' @examples demotivate()
 demotivate <- function(x, width = NULL) {
-    txt <- c("\"All models are wrong but some are useful.\" George Box. Indeed but its unclear that you can take much consolation from that.",
+    txt <- c("'All models are wrong but some are useful.' George Box. Indeed but its unclear that you can take much consolation from that.",
              "Those last set of results you got: not exactly AER material are they?",
              "Have you thought of trying economic theory? It worked out well for Paul Krugman.",
              "Seriously, nobody believes your p values.",
@@ -21,16 +21,16 @@ demotivate <- function(x, width = NULL) {
              "You need to stop thinking like a graduate student. Especially if you are one.",
              "John Ioannidis has got you sussed out. All of us in fact. We're doomed I tell you.",
              #"Best not to dwell on what your R-using colleagues really think of you.",
-             "\"Friends don't let friends use instrumental variables.\" Unknown.",
+             "'Friends don't let friends use instrumental variables.' Unknown.",
              "This will be a lot easier to do in the next version of Stata. Kerching $$$$$ !",
              "The fact is most papers are rejected.",
              #"It's not too late to learn Python",
              "If only you had taken a few more math courses you could have been someone. You could have been a contender.",
              "Life is full of emptiness.",
-             "\"Imagine how hard physics would be if electrons had feelings.\" Richard Feynmann. Welcome to our world, Dick.",
-             "\"There are no routine statistical questions only questionable statistical routines.\" David Cox. Here's looking at you, kid.",
-             "\"But our preferred model shows...\"  lmao, gets me everytime.",
-             "\"Erode gormless sin\" is an anagram for \"regression models\" curiously enough.",
+             "'Imagine how hard physics would be if electrons had feelings.' Richard Feynmann. Welcome to our world, Dick.",
+             "'There are no routine statistical questions only questionable statistical routines.' David Cox. Here's looking at you, kid.",
+             "'But our preferred model shows...'  lmao, gets me everytime.",
+             "'Erode gormless sin' is an anagram for 'regression models' curiously enough.",
              "Don't worry: there is a behavioral economics interpretation of your results.",
              "Have you ever considered letting Bayes into your life?" )
 
