@@ -2,13 +2,13 @@
 % Please edit documentation in R/demotivate.R
 \name{demotivate}
 \alias{demotivate}
-\title{Demotivating quote}
+\title{Display a demotivating quote}
 \usage{
 demotivate(x, width = NULL)
 }
 \arguments{
-\item{x}{A value between 0 and 1 chosen to select a quote; if not given a random
-uniform draw is made.}
+\item{x}{A index value chosen to select a quote; if not given a quote is
+chosen randomly.}
 
 \item{width}{The desired display width.}
 }
@@ -16,18 +16,20 @@ uniform draw is made.}
 The formatted is returned invisibly.
 }
 \description{
-Display a demotivating quote
+Display a demotivating quote to remind the users of the harsh reality
+econometric and statistical practice.
 }
 \details{
-This function is port of the 'Stata' ado file at
-\url{http://fmwww.bc.edu/repec/bocode/d/demotivate.ado}
+This function is a port of \code{demotivate} command for 'Stata' from the
+ado file at \url{http://fmwww.bc.edu/repec/bocode/d/demotivate.ado}.
 }
 \examples{
 demotivate()
 }
 \seealso{
-\url{http://fmwww.bc.edu/repec/bocode/d/demotivate.ado}
+\url{https://ideas.repec.org/c/boc/bocode/s458576.html}
 }
 \author{
-Dirk Eddelbuettel for this function, and Kevin Denny for the 'Stata' original.
+Dirk Eddelbuettel for this function, and Kevin Denny for the
+'Stata' original.
 }

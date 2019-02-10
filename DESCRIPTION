@@ -3,7 +3,8 @@ Type: Package
 Title: 'Dang' Associated New Goodies
 Version: 0.0.9
 Date: 2018-11-17
-Author: Dirk Eddelbuettel with contributions by Brodie Gaslam, Kevin Denny, and others
+Author: Dirk Eddelbuettel with contributions by Brodie Gaslam, Kevin Denny,
+ Kabira Namit, and others
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: A collection of utility functions.
 Suggests: anytime, data.table, zoo, xts, TTR, quantmod

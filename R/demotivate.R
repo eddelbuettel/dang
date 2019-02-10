@@ -10,7 +10,8 @@
 ##' @param width The desired display width.
 ##' @return The formatted is returned invisibly.
 ##' @seealso \url{https://ideas.repec.org/c/boc/bocode/s458576.html}
-##' @author Dirk Eddelbuettel for this function, and Kevin Denny for the 'Stata' original.
+##' @author Dirk Eddelbuettel for this function, and Kevin Denny for the
+##' 'Stata' original.
 ##' @examples demotivate()
 demotivate <- function(x, width = NULL) {
     txt <- c("'All models are wrong but some are useful.' George Box. Indeed but its unclear that you can take much consolation from that.",
