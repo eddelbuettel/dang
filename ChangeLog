@@ -4,6 +4,10 @@
 	Stata command by Kabira Namit
 	* man/motivate.Rd: Documentation
 
+	* R/inGit.R (inGit): Simple helper function to determine if given
+	directory is part of a git repo. Does not work on Windows.
+	* man/inGit.Rd: Documentation
+
 2019-02-09  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/demotivate.R (demotivate): Simplified code and commented out two
