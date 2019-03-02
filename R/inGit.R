@@ -13,11 +13,9 @@
 ##' @examples
 ##' inGit()
 inGit <- function(cwd=getwd()) {
-    #print(cwd)
-    #print(".." %in% dir(cwd, all.files=TRUE, include.dirs=TRUE))
-    if (.Platform$OS.type == "windows") return(FALSE)
+    isTop <- function(cwd) normalizePath(cwd) == normalizePath(file.path(cwd, ".."))
     if (dir.exists(file.path(cwd, ".git"))) return(cwd)
     parent <- normalizePath(file.path(cwd, ".."))
-    if (parent == "/") return("")
+    if (parent == "/" || isTop(parent)) return("")
     return(inGit(parent))
 }
