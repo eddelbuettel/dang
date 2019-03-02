@@ -6,12 +6,15 @@
 ##' @title Are we in a \code{git} repository?
 ##' @param cwd The start directory, default to the current working
 ##' directory
-##' @return A boolean value indicating whether or not the given
-##' directory is, in fact, in a \code{git} repository.
+##' @return The path of the directory containing the \code{.git}
+##'  directory, ie the project root directory, or an empty string
+##'  in case the search started outside a \code{git} directory.
 ##' @author Dirk Eddelbuettel
 ##' @examples
 ##' inGit()
 inGit <- function(cwd=getwd()) {
+    #print(cwd)
+    #print(".." %in% dir(cwd, all.files=TRUE, include.dirs=TRUE))
     if (.Platform$OS.type == "windows") return(FALSE)
     if (dir.exists(file.path(cwd, ".git"))) return(cwd)
     parent <- normalizePath(file.path(cwd, ".."))
