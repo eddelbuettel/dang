@@ -3,9 +3,9 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/dang/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/dang/issues/#1}{##1}}
 
-\section{Changes in version 0.0.11 (2019-03-xx)}{
+\section{Changes in version 0.0.11 (2019-04-xx)}{
   \itemize{
-    \item New functions \code{getGitRoot} and \code{inGit}.
+    \item New functions \code{getGitRoot}, \code{inGit} and \code{isConnected}.
   }
 }
 
