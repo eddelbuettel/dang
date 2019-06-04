@@ -2,12 +2,20 @@
 % Please edit documentation in R/datatable.R
 \name{as.data.table.xts}
 \alias{as.data.table.xts}
+\alias{as.data.table}
+\alias{as.data.table.default}
 \title{Convert an xts object into a data.table}
 \usage{
-as.data.table.xts(x)
+\method{as.data.table}{xts}(x)
+
+as.data.table(x)
+
+\method{as.data.table}{default}(x, ...)
 }
 \arguments{
 \item{x}{An xts object}
+
+\item{...}{Catch-all arguments passed on to methods}
 }
 \value{
 A data.table object with new columns date, time, micros,

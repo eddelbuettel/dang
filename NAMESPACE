@@ -2,7 +2,10 @@ importFrom("utils", "head", "object.size", "tail", "download.file", "read.table"
 importFrom("grDevices", "rgb", "xy.coords")
 importFrom("graphics", "lines", "plot")
 importFrom("stats", "time", "runif")
+importFrom("stats", "time", "runif")
 
 exportPattern("^[[:alpha:]]+")
 
 S3method(print, xts)
+S3method(as.data.table, default)
+S3method(as.data.table, xts)
