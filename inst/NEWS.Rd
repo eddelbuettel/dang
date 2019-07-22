@@ -6,6 +6,7 @@
 \section{Changes in version 0.0.11 (2019-04-xx)}{
   \itemize{
     \item New functions \code{getGitRoot}, \code{inGit} and \code{isConnected}.
+    \item Improved function \code{as.data.table.xts}.
   }
 }
 

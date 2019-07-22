@@ -1,4 +1,4 @@
-## dang [![Build Status](https://travis-ci.org/eddelbuettel/dang.svg)](https://travis-ci.org/eddelbuettel/dang) [![Package-License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/dang)](https://cran.r-project.org/package=dang) [![Dependencies](https://tinyverse.netlify.com/badge/dang)](https://cran.r-project.org/package=dang) 
+## dang [![Build Status](https://travis-ci.org/eddelbuettel/dang.svg)](https://travis-ci.org/eddelbuettel/dang) [![Package-License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/dang)](https://cran.r-project.org/package=dang) [![Dependencies](https://tinyverse.netlify.com/badge/dang)](https://cran.r-project.org/package=dang) [![Downloads](http://cranlogs.r-pkg.org/badges/dang?color=brightgreen)](http://www.r-pkg.org/pkg/dang)
 
 Dang: Dang Assorted New Goodies
 
