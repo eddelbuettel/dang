@@ -24,7 +24,7 @@ getGitRoot <- function(cwd=getwd()) {
     if (dir.exists(file.path(cwd, ".git"))) return(cwd)
     parent <- normalizePath(file.path(cwd, ".."))
     if (parent == "/" || isTop(parent)) return("")
-    return(inGit(parent))
+    return(getGitRoot(parent))
 }
 
 ##' @rdname getGitRoot
