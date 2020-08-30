@@ -1,4 +1,17 @@
+2020-08-30  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Rolled minor version
+
+	* R/checkNonAscii.R (checkPackageAsciiCode): Added new helper based
+	on base R function .check_package_ASCII_code
+	* man/checkPackageAsciiCode.Rd: Documentation
+	* src/checkNonAcii.cpp: Underlying C/C++ helper
+	* src/init.c: Registration of new function
+	* NAMESPACE: Add useDynlib call
+
 2020-08-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Rolled minor version
 
 	* R/muteTweets.R (muteTweeters): Added, derived from Colin's post
 	* man/muteTweeters.Rd: Idem
