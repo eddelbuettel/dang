@@ -4,3 +4,4 @@
 .travis.yml$
 R/lsb.R
 ^local
+^run.sh
