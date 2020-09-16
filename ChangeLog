@@ -1,6 +1,14 @@
 2020-09-15  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Rolled minor version
+
 	* .travis.yml (dist): Switch to 'bionic' and R 4.0.*
+	* run.sh: Travis test runner, local copy while testing
+
+	* R/checkNonAscii.R: Moved to branch
+	* man/checkPackageAsciiCode.Rd: Idem
+	* src/checkNonAcii.cpp: Idem
+	* src/init.c: Idem
 
 2020-08-30  Dirk Eddelbuettel  <edd@debian.org>
 
