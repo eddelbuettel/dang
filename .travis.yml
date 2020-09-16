@@ -4,28 +4,25 @@ language: c
 sudo: required
 dist: bionic
 
-# jobs:
-#   include:
-#     #- name: r-3.5
-#     #  env: R_VERSION="3.5"
-#     - name: r-4.0
-#       env: R_VERSION="4.0"
+jobs:
+  include:
+    - name: linux
+      os: linux
+    - name: macOS
+      os: osx
 
 ## Two core settings: BSPM for binary installation where possible, and no
 ## installation of 'Suggests:' to keep things lighter
 env:
   global:
-    - USE_BSPM="true"
-      _R_CHECK_FORCE_SUGGESTS_="false"
-      
+    - _R_CHECK_FORCE_SUGGESTS_="false"
+      USE_BSPM="true"
+    
 before_install:
-  #- curl -OLs https://eddelbuettel.github.io/r-travis/run.sh && chmod 0755 run.sh
-  #- curl -OLs https://raw.githubusercontent.com/eddelbuettel/r-travis/feature/littler_and_bspm/run.sh && chmod 0755 run.sh
+  - curl -OLs https://eddelbuettel.github.io/r-travis/run.sh && chmod 0755 run.sh
   - ./run.sh bootstrap
 
 install:
-  #- ./run.sh install_aptget r-cran-data.table r-cran-quantmod r-cran-rcpp r-cran-bh 
-  #- ./run.sh install_r anytime rtweet 
   - ./run.sh install_all
 
 script:
