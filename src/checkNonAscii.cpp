@@ -2,7 +2,8 @@
 
 extern "C" {
 
-SEXP _check_nonASCII2(SEXP text, SEXP ignore_quotes) {
+// cf src/library/tools/src/text.c
+SEXP _check_nonASCII(SEXP text, SEXP ignore_quotes) {
     /* Check if all the lines in 'text' are ASCII, after removing
        comments and ignoring the contents of quotes (unless ignore_quotes)
        (which might span more than one line and might be escaped).
@@ -21,13 +22,13 @@ SEXP _check_nonASCII2(SEXP text, SEXP ignore_quotes) {
     if (ign == NA_LOGICAL) R::error("'ignore_quotes' must be TRUE or FALSE");
 
     for (i = 0; i < R::length(text); i++) {
-        p = R::ptrChar(R::stringElement(text, i)); // ASCII or not not affected by charset
+        p = R::charPointer(R::stringElement(text, i)); // ASCII or not not affected by charset
 	inquote = FALSE; /* avoid runaway quotes */
 	for (; *p; p++) {
 	    if (!inquote && *p == '#') break;
 	    if (!inquote || ign) {
 		if ((unsigned int) *p > 127) {
-                    Rprintf("%s\n", R::ptrChar(R::stringElement(text, i)));
+                    Rprintf("%s\n", R::charPointer(R::stringElement(text, i)));
 		    Rprintf("found %x\n", (unsigned int) *p);
 		    return R::ScalarLogical(TRUE);
 		}
