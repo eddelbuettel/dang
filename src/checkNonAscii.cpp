@@ -30,7 +30,7 @@ SEXP _check_nonASCII(SEXP text, SEXP ignore_quotes) {
 		if ((unsigned int) *p > 127) {
                     Rprintf("%s\n", R::charPointer(R::stringElement(text, i)));
 		    Rprintf("found %x\n", (unsigned int) *p);
-		    return R::ScalarLogical(TRUE);
+		    return R::scalarLogical(TRUE);
 		}
 	    }
 	    if ((nbslash % 2 == 0) && (*p == '"' || *p == '\'')) {
@@ -44,7 +44,7 @@ SEXP _check_nonASCII(SEXP text, SEXP ignore_quotes) {
 	    if (*p == '\\') nbslash++; else nbslash = 0;
 	}
     }
-    return R::ScalarLogical(FALSE);
+    return R::scalarLogical(FALSE);
 }
 
 } // extern "C"
