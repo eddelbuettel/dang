@@ -2,7 +2,10 @@
 
 	* DESCRIPTION (Version, Date): Rolled minor version
 
-	* src/checkNonAscii.cpp: Update to released tidyCpp, add header
+	* R/checkNonAscii.R: Moved back from branch
+	* man/checkPackageAsciiCode.Rd: Idem
+	* src/checkNonAcii.cpp: Idem, updated to released tidyCpp, add header
+	* src/init.c: Idem
 
 2020-09-15  Dirk Eddelbuettel  <edd@debian.org>
 
