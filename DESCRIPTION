@@ -1,8 +1,8 @@
 Package: dang
 Type: Package
 Title: 'Dang' Associated New Goodies
-Version: 0.0.11.3
-Date: 2020-09-15
+Version: 0.0.11.4
+Date: 2020-10-11
 Author: Dirk Eddelbuettel with contributions by Brodie Gaslam, Kevin Denny,
  Kabira Namit, Colin Gillespie, R Core, and others.
 Maintainer: Dirk Eddelbuettel <edd@debian.org>

@@ -1,3 +1,9 @@
+2020-10-11  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Rolled minor version
+
+	* src/checkNonAscii.cpp: Update to released tidyCpp, add header
+
 2020-09-15  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Rolled minor version
