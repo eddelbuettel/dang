@@ -43,7 +43,7 @@ List object and memory used by these objects
 \details{
 These helper functions have evolved over the years; some were also
 posted on StackOverflow in response to
-\url{http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session}
+\url{https://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session}
 }
 \author{
 Dirk Eddelbuettel, based on and extending code in mailing list

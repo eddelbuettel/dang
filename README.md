@@ -4,7 +4,7 @@
 [![Package-License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html) 
 [![CRAN](http://www.r-pkg.org/badges/version/dang)](https://cran.r-project.org/package=dang) 
 [![Dependencies](https://tinyverse.netlify.com/badge/dang)](https://cran.r-project.org/package=dang) 
-[![Downloads](http://cranlogs.r-pkg.org/badges/dang?color=brightgreen)](http://www.r-pkg.org/pkg/dang)
+[![Downloads](http://cranlogs.r-pkg.org/badges/dang?color=brightgreen)](https://www.r-pkg.org:443/pkg/dang)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/dang)](https://github.com/eddelbuettel/dang)
 
 ### About

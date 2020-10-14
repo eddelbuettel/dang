@@ -3,7 +3,7 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/dang/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/dang/issues/#1}{##1}}
 
-\section{Changes in version 0.0.12 (2020-10-xx)}{
+\section{Changes in version 0.0.12 (2020-10-14)}{
   \itemize{
     \item New functions \code{muteTweets} and \code{checkPackageAsciiCode}.
     \item Updated CI setup.
