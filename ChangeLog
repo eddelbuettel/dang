@@ -1,3 +1,7 @@
+2020-11-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .travis.yml: Switch to focal
+
 2020-10-14  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.0.12
