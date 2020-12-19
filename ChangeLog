@@ -3,6 +3,8 @@
         * .github/workflows/ci.yaml: Add CI runner using r-ci
 	* README.md: Add new CI badge
 
+	* .ci/ci.yaml: Add Azure CI runner using r-ci
+
 2020-11-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .travis.yml: Switch to focal

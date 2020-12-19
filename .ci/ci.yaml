@@ -1,0 +1,35 @@
+# Evolved from starter pipeline via r-azure-pipelines repo
+
+trigger:
+- master
+
+variables:
+- name: R_LIBS_USER
+  value: '$(Agent.BuildDirectory)/R/library'
+- name: CRAN
+  value: 'https://cloud.r-project.org'
+- name: _R_CHECK_FORCE_SUGGESTS_
+  value: false
+- name: USE_BSPM
+  value: true
+
+strategy:
+  matrix:
+    linux:
+      imageName: "ubuntu-latest"
+    macos:
+      imageName: "macos-latest"
+  maxParallel: 2
+  
+steps: 
+  - bash: curl -OLs https://eddelbuettel.github.io/r-travis/run.sh
+    displayName: download
+  - bash: chmod 0755 run.sh
+    displayName: mode
+  - bash: ./run.sh bootstrap
+    displayName: bootstrap
+  - bash: ./run.sh install_deps
+    displayName: deps
+  - bash: ./run.sh run_tests
+    displayName: tests
+        
