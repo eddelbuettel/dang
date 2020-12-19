@@ -5,3 +5,4 @@
 R/lsb.R
 ^local
 ^run.sh
+^\.github
