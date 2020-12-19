@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/eddelbuettel/dang.svg)](https://travis-ci.org/eddelbuettel/dang) 
 [![CI](https://github.com/eddelbuettel/dang/workflows/ci/badge.svg)](https://github.com/eddelbuettel/dang/actions?query=workflow%3Aci)
+[![Build Status](https://dev.azure.com/eddelbuettel/dang/_apis/build/status/dang)](https://dev.azure.com/eddelbuettel/dang/_build)
 [![Package-License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html) 
 [![CRAN](http://www.r-pkg.org/badges/version/dang)](https://cran.r-project.org/package=dang) 
 [![Dependencies](https://tinyverse.netlify.com/badge/dang)](https://cran.r-project.org/package=dang) 
