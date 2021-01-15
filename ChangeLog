@@ -1,3 +1,12 @@
+2021-01-15  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll minor version
+
+	* R/intradayMarketMonitor.R: Added as extended and refactored version
+	of an initial gist by Josh Ulrich
+	* man/intradayMarketMonitor.Rd: Documentation
+	* DESCRIPTION: Acknowledge Josh Ulrich
+
 2020-12-25  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .github/workflows/ci.yaml: Small tweaks to CI YAML file
