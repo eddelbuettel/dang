@@ -3,8 +3,7 @@ useDynLib(dang, .registration=TRUE)
 importFrom("utils", "head", "object.size", "tail", "download.file", "read.table")
 importFrom("grDevices", "rgb", "xy.coords")
 importFrom("graphics", "lines", "plot")
-importFrom("stats", "time", "runif")
-importFrom("stats", "time", "runif")
+importFrom("stats", "time", "runif", "na.omit")
 
 exportPattern("^[[:alpha:]]+")
 

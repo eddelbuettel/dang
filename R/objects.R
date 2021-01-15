@@ -2,7 +2,7 @@
 ##'
 ##' These helper functions have evolved over the years; some were also
 ##' posted on StackOverflow in response to
-##' \url{http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session}
+##' \url{https://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session}
 ##' @title List largest objects and show memory use
 ##' @param pos Position in search path, defaults to 1
 ##' @param pattern Pattern argument pass on to \code{ls}
