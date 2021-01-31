@@ -14,7 +14,8 @@ package \pkg{quantmod}, default value is \dQuote{^GSPC}.}
 the data, default value is \dQuote{America/Chicagp}.}
 }
 \value{
-Nothing is returned
+Nothing is returned, but a display of the current price and the recent history
+is updated, and the loops loops \sQuote{forever}.
 }
 \description{
 Intra-day Market Monitor for Security Prices
@@ -30,7 +31,10 @@ being prepared.
 
 The function could be further generalized in numerous way and should be considered
 \sQuote{alpha}. Current default values are a 15 second sleep, and fixed cut-off times
-for market open/close states. These will become configuration parameters in due course.
+for market open/close states corresponding to NYSE hours. The data history is reset to
+the two most recent days at the close, amd the data is snapshot to file (with the
+filename derived from the symbol, and the path given by \code{tools::R_user_dir}).
+These parameters might become configuration parameters in the future.
 }
 \examples{
 if (requireNamespace("quantmod", quietly)) {           # only suggested packages used

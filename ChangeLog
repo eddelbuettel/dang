@@ -1,3 +1,8 @@
+2021-01-31  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/intradayMarketMonitor.R: Several smaller refinements
+	* man/intradayMarketMonitor.Rd: Updated too
+
 2021-01-15  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Roll minor version

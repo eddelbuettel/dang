@@ -13,13 +13,18 @@
 ##'
 ##' The function could be further generalized in numerous way and should be considered
 ##' \sQuote{alpha}. Current default values are a 15 second sleep, and fixed cut-off times
-##' for market open/close states. These will become configuration parameters in due course.
+##' for market open/close states corresponding to NYSE hours. The data history is reset to
+##' the two most recent days at the close, amd the data is snapshot to file (with the
+##' filename derived from the symbol, and the path given by \code{tools::R_user_dir}).
+##' These parameters might become configuration parameters in the future.
+##'
 ##' @title Intra-day market monitor
 ##' @param symbol A character variable with symbol understood by \code{getQuote} from
 ##' package \pkg{quantmod}, default value is \dQuote{^GSPC}.
 ##' @param defaultTZ A character variable with the (local) timezone used for displaying
 ##' the data, default value is \dQuote{America/Chicagp}.
-##' @return Nothing is returned
+##' @return Nothing is returned, but a display of the current price and the recent history
+##' is updated, and the loops loops \sQuote{forever}.
 ##' @seealso \url{https://gist.github.com/joshuaulrich/ee11ef67b1461df399b84efd3c8f9f67#file-intraday-sp500-r}
 ##' @author Dirk Eddelbuettel extending and refactoring the original code by Josh Ulrich
 ##' @examples
@@ -42,30 +47,30 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
     prevVol <- 0
     repeat {
         curr_t <- Sys.time()
-        now_t <- xts::xts(, curr_t)
-        now <- xts::.indexhour(now_t)*100 + xts::.indexmin(now_t)
+        now <- .hourmin(curr_t)
         if (now >= 1500) {
-            .msg(zoo::index(now_t), "after close; setting NA, writing data and sleeping")
+            .msg(curr_t, "after close; setting NA, writing data and sleeping")
             market_closed <- TRUE
-            ## we need three NA observations to plot a gap, so repeat three times
-            y <- xts::xts(data.frame(Open=rep(NA,3),High=NA,Low=NA,Close=NA,Volume=0),
-                          trunc(curr_t)+0:2)
+            ## we need an NA observations to plot a gap
+            y <- xts::xts(data.frame(Open=NA,High=NA,Low=NA,Close=NA,Volume=0), trunc(curr_t))
             x <- rbind(x, y)
             saveRDS(x, spfile)
+            x <- .most_recent_n_days(x)      # subset data
             tgt <- as.POSIXct(paste(format(as.Date(curr_t)), "23:59:59"))
             dt <- ceiling(as.numeric(difftime(tgt, curr_t, units="mins")))
             Sys.sleep(dt*60)
             next
         } else if (now < 830) {
             market_closed <- TRUE
-            tgt <- as.POSIXct(paste(format(as.Date(curr_t)), "08:29:00"))
-            dt <- max(1L, round(as.numeric(difftime(tgt, curr_t, units="mins"))))
-            .msg(zoo::index(now_t), "before open; sleeping for", dt, "min")
+            tgt <- as.POSIXct(paste(format(as.Date(curr_t)), "08:29:59"))
+            dt <- max(1L, round(as.numeric(difftime(tgt, curr_t, units="secs"))))
+            .msg(curr_t, "before open; sleeping for", dt, "secs or", round(dt/60,0), "mins")
             x <- .most_recent_n_days(x)      # subset data
-            Sys.sleep(dt*60)
+            Sys.sleep(dt)
             next
         } else if (now >= 830 && market_closed) {
-            .msg(zoo::index(now_t), "market open")
+            .msg(curr_t, "market open")
+            prevVol <- 0
             market_closed <- FALSE
         }
         y <- try(.get_data(symbol, defaultTZ), silent = TRUE)
@@ -79,12 +84,10 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
             .msg(curr_t, "...recovered")
         }
         v <- unname(zoo::coredata(quantmod::Vo(y))[1,1])
-        if (v > prevVol) {
-            x <- rbind(x, y)
-        }
-        prevVol <- v
-        if (nrow(x) >= 5) {
-            .show_plot(symbol, x, y)
+        if (v != prevVol) {
+            prevVol <- v
+            if (!market_closed) x <- rbind(x, y)
+            if (nrow(x) >= 4) .show_plot(symbol, x, y)
         }
         Sys.sleep(15)
     }
@@ -108,7 +111,7 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
     d
 }
 
-.most_recent_n_days <- function(x, n=2, minobs=1500) {
+.most_recent_n_days <- function(x, n=2, minobs=1000) {
     tt <- table(as.Date(zoo::index(x)))
     cutoff <- as.Date(names(head(tail(tt[tt>minobs], n), 1)))
     x[ as.Date(zoo::index(x)) >= cutoff ]
@@ -132,4 +135,9 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
     op <- options(digits.secs=3)
     cat(format(ts), ..., "\n")
     options(op)
+}
+
+.hourmin <- function(ts) {
+    now_t <- xts::xts(, ts)
+    xts::.indexhour(now_t)*100 + xts::.indexmin(now_t)
 }
