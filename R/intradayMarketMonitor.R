@@ -36,33 +36,36 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
     stopifnot(`The quantmod packages is required.`=requireNamespace("quantmod", quietly=TRUE))
 
     x <- NULL
-    spfile <- .default_file(symbol)
-    if (file.exists(spfile)) {
-        x <- .most_recent_n_days(readRDS(spfile))
+    datafile <- .default_file(symbol)
+    if (file.exists(datafile)) {
+        x <- .most_recent_n_days(readRDS(datafile))
         .show_plot(symbol, x)
     }
 
     market_closed <- TRUE
     errored <- FALSE
-    prevVol <- 0
     repeat {
         curr_t <- Sys.time()
         now <- .hourmin(curr_t)
         if (now >= 1500) {
-            .msg(curr_t, "after close; setting NA, writing data and sleeping")
-            market_closed <- TRUE
             ## we need an NA observations to plot a gap
-            y <- xts::xts(data.frame(Open=NA,High=NA,Low=NA,Close=NA,Volume=0), trunc(curr_t))
-            x <- rbind(x, y)
-            saveRDS(x, spfile)
+            if (!market_closed) {
+                y <- xts::xts(data.frame(Open=NA,High=NA,Low=NA,Close=NA,Volume=0), trunc(curr_t))
+                x <- rbind(x, y)
+                saveRDS(x, datafile)
+                .msg(curr_t, "after close; set NA + wrote data, sleeping")
+            } else {
+                .msg(curr_t, "after close; sleeping")
+            }
             x <- .most_recent_n_days(x)      # subset data
-            tgt <- as.POSIXct(paste(format(as.Date(curr_t)), "23:59:59"))
+            market_closed <- TRUE
+            tgt <- as.POSIXct(paste(format(as.Date(curr_t)), "23:59:59.999"))
             dt <- ceiling(as.numeric(difftime(tgt, curr_t, units="mins")))
             Sys.sleep(dt*60)
             next
         } else if (now < 830) {
             market_closed <- TRUE
-            tgt <- as.POSIXct(paste(format(as.Date(curr_t)), "08:29:59"))
+            tgt <- as.POSIXct(paste(format(as.Date(curr_t)), "08:29:59.999"))
             dt <- max(1L, round(as.numeric(difftime(tgt, curr_t, units="secs"))))
             .msg(curr_t, "before open; sleeping for", dt, "secs or", round(dt/60,0), "mins")
             x <- .most_recent_n_days(x)      # subset data
@@ -70,29 +73,33 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
             next
         } else if (now >= 830 && market_closed) {
             .msg(curr_t, "market open")
-            prevVol <- 0
             market_closed <- FALSE
         }
         y <- try(.get_data(symbol, defaultTZ), silent = TRUE)
         if (inherits(y, "try-error")) {
             .msg(curr_t, "Error:", attr(y, "condition")[["message"]])
             errored <- TRUE
-            Sys.sleep(15)
+            Sys.sleep(10)
             next
         } else if (errored) {
             errored <- FALSE
             .msg(curr_t, "...recovered")
         }
-        v <- unname(zoo::coredata(quantmod::Vo(y))[1,1])
-        if (v != prevVol) {
-            prevVol <- v
-            if (!market_closed) x <- rbind(x, y)
-            if (nrow(x) >= 4) .show_plot(symbol, x, y)
+        if (!market_closed) {
+            dataDate <- as.Date(zoo::index(tail(y,1)))
+            currDate <- as.Date(curr_t)
+            if (currDate == dataDate) {
+                x <- rbind(x, y)
+            } else {
+                .msg(curr_t, "Skip previous close", format(zoo::index(y)),
+                     "close", y[1,"Close"], "pct_change", attr(y,"pct_change"))
+            }
         }
-        Sys.sleep(15)
+        if (nrow(x) >= 4) .show_plot(symbol, x, y)
+        Sys.sleep(10)
     }
     # may not get here if Ctrl-C aborted
-    saveRDS(x, spfile)
+    saveRDS(x, datafile)
 }
 
 ## unexported helper functions below
