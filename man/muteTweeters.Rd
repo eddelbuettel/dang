@@ -22,9 +22,9 @@ Mutes Twitter accounts using for than 'ncrit' hashtags among 'N' tweets in
 search of along with of 'term'.
 }
 \details{
-This is a modified version of the code in this wonderful tweet by Colin
-Gillespie at \url{https://twitter.com/csgillespie/status/1298621645767290881}.
-It requires the \code{rtweet} and \code{data.table} packages.
+This is a modified version of the code in a wonderful tweet by Colin
+Gillespie (csgillespie) on 2020-August-26. It requires the \code{rtweet}
+and \code{data.table} packages.
 }
 \examples{
 \dontrun{

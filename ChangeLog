@@ -1,3 +1,9 @@
+2021-02-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/muteTweets.R: Reword reference to Colin's tweet and remove link
+	which Twitter no longer honours unless one is logged in
+	* man/muteTweeters.Rd: Ditto
+
 2021-02-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/intradayMarketMonitor.R: More tweaks

@@ -1,9 +1,9 @@
 ##' Mutes Twitter accounts using for than 'ncrit' hashtags among 'N' tweets in
 ##' search of along with of 'term'.
 ##'
-##' This is a modified version of the code in this wonderful tweet by Colin
-##' Gillespie at \url{https://twitter.com/csgillespie/status/1298621645767290881}.
-##' It requires the \code{rtweet} and \code{data.table} packages.
+##' This is a modified version of the code in a wonderful tweet by Colin
+##' Gillespie (csgillespie) on 2020-August-26. It requires the \code{rtweet}
+##' and \code{data.table} packages.
 ##' @title Mute Twitter Users with Excessive Hashtag Use
 ##' @param term A character variable to search for, defaults to \sQuote{#rstats}
 ##' @param N An number of tweets to fetch, defaults to 1000
