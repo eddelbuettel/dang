@@ -1,5 +1,7 @@
 2021-02-17  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Release 0.0.13
+
 	* R/muteTweets.R: Reword reference to Colin's tweet and remove link
 	which Twitter no longer honours unless one is logged in
 	* man/muteTweeters.Rd: Ditto
