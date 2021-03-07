@@ -1,5 +1,7 @@
 2021-03-07  Dirk Eddelbuettel  <edd@debian.org>
 
+ 	* DESCRIPTION (Version, Date): Roll minor version
+
 	* src/readAndConvert.cpp (_readAndConvert): New function to read and
 	convert encoding via R-supplied iconv library
 	* R/readAndConvert.R (readAndConvert): R wrapper
@@ -33,7 +35,7 @@
 
 2021-01-15  Dirk Eddelbuettel  <edd@debian.org>
 
-	* DESCRIPTION (Version, Date): Roll minor version
+ 	* DESCRIPTION (Version, Date): Roll minor version
 
 	* R/intradayMarketMonitor.R: Added as extended and refactored version
 	of an initial gist by Josh Ulrich
