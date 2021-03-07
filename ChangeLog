@@ -1,5 +1,11 @@
 2021-03-07  Dirk Eddelbuettel  <edd@debian.org>
 
+	* src/readAndConvert.cpp (_readAndConvert): New function to read and
+	convert encoding via R-supplied iconv library
+	* R/readAndConvert.R (readAndConvert): R wrapper
+	* man/readAndConvert.Rd: Documentation
+	* src/init.c (CallEntries): Registration
+
 	* R/intradayMarketMonitor.R (.show_plot): Refine title display to
 	fall back to last good data point outside of market hours
 

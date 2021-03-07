@@ -3,15 +3,17 @@
 #include <stdlib.h> // for NULL
 #include <R_ext/Rdynload.h>
 
-/* FIXME: 
+/* FIXME:
    Check these declarations against the C/Fortran source code.
 */
 
 /* .Call calls */
 extern SEXP _check_nonASCII(SEXP, SEXP);
+extern SEXP _readAndConvert(SEXP, SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
     {"_check_nonASCII", (DL_FUNC) &_check_nonASCII, 2},
+    {"_readAndConvert", (DL_FUNC) &_readAndConvert, 2},
     {NULL, NULL, 0}
 };
 
