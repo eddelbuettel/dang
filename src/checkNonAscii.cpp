@@ -50,26 +50,26 @@ SEXP _check_nonASCII(SEXP text, SEXP ignore_quotes) {
 
     for (i = 0; i < R::length(text); i++) {
         p = R::charPointer(R::stringElement(text, i)); // ASCII or not not affected by charset
-	inquote = FALSE; /* avoid runaway quotes */
-	for (; *p; p++) {
-	    if (!inquote && *p == '#') break;
-	    if (!inquote || ign) {
-		if ((unsigned int) *p > 127) {
+        inquote = FALSE; /* avoid runaway quotes */
+        for (; *p; p++) {
+            if (!inquote && *p == '#') break;
+            if (!inquote || ign) {
+                if ((unsigned int) *p > 127) {
                     Rprintf("%s\n", R::charPointer(R::stringElement(text, i)));
-		    Rprintf("found %x\n", (unsigned int) *p);
-		    return R::scalarLogical(TRUE);
-		}
-	    }
-	    if ((nbslash % 2 == 0) && (*p == '"' || *p == '\'')) {
-		if (inquote && *p == quote) {
-		    inquote = FALSE;
-		} else if(!inquote) {
-		    quote = *p;
-		    inquote = TRUE;
-		}
-	    }
-	    if (*p == '\\') nbslash++; else nbslash = 0;
-	}
+                    Rprintf("found %x\n", (unsigned int) *p);
+                    return R::scalarLogical(TRUE);
+                }
+            }
+            if ((nbslash % 2 == 0) && (*p == '"' || *p == '\'')) {
+                if (inquote && *p == quote) {
+                    inquote = FALSE;
+                } else if(!inquote) {
+                    quote = *p;
+                    inquote = TRUE;
+                }
+            }
+            if (*p == '\\') nbslash++; else nbslash = 0;
+        }
     }
     return R::scalarLogical(FALSE);
 }

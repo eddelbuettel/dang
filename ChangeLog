@@ -1,5 +1,8 @@
 2021-03-07  Dirk Eddelbuettel  <edd@debian.org>
 
+	* R/intradayMarketMonitor.R (.show_plot): Refine title display to
+	fall back to last good data point outside of market hours
+
 	* src/checkNonAscii.cpp (_check_nonASCII): Changed indentation to make
 	outer for loop more explicit
 
