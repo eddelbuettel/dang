@@ -1,3 +1,8 @@
+2021-03-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/checkNonAscii.cpp (_check_nonASCII): Changed indentation to make
+	outer for loop more explicit
+
 2021-02-17  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.0.13
@@ -258,4 +263,3 @@
 
 	* R/datatable.R (as.data.table.xts): First version
 	* R/objects.R (ls.objects, lsos, showMemoryUse): Idem
-

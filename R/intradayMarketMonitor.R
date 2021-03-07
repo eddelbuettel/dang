@@ -125,8 +125,13 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
 }
 
 .show_plot <- function(symbol, x, y) {
-    cname <- paste(symbol, format(quantmod::Cl(xts::last(na.omit(x)))), sep="\t")
-    if (!missing(y)) cname <- paste(cname, round(attr(y, "pct_change"), 5), sep = "\t")
+    if (!missing(y) && !is.na(y[,"Close"]))
+        cname <-  paste(symbol, format(y[,"Close"]), round(y[,"Change"], 2), round(y[,"PctChange"], 5),
+                        format(Sys.time(), "%H:%M:%S"), sep = "   ")
+    else {
+        z <- tail(na.omit(x),1)
+        cname <-  paste(symbol, format(z[,"Close"]), format(zoo::index(z), "%H:%M:%S"), sep = "   ")
+    }
     cs <- quantmod::chart_Series(quantmod::Cl(x), name = cname)
     plot(cs)
 }
