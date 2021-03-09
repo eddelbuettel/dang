@@ -1,3 +1,8 @@
+2021-03-08  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/readAndConvert.R: Add note on potential variability of iconv output
+	* man/readAndConvert.Rd: Idem
+
 2021-03-07  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Roll minor version
