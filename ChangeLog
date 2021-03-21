@@ -1,3 +1,8 @@
+2021-03-21  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/wday.R (wday): New function to return daya of the week as integer
+	* man/wday.Rd: Documentation
+
 2021-03-08  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/readAndConvert.R: Add note on potential variability of iconv output
