@@ -7,6 +7,7 @@ Author: Dirk Eddelbuettel with contributions by Brodie Gaslam, Kevin Denny,
  Kabira Namit, Colin Gillespie, R Core, Josh Ulrich, and others.
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: A collection of utility functions.
+URL: https://github.com/eddelbuettel/dang, https://dirk.eddelbuettel.com/code/dang.html
 BugReports: https://github.com/eddelbuettel/dang/issues
 Suggests: anytime, data.table, zoo, xts, TTR, quantmod, rtweet
 LinkingTo: tidyCpp

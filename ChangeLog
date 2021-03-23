@@ -1,3 +1,7 @@
+2021-03-22  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (URL): Add links to repo and package page
+
 2021-03-21  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/wday.R (wday): New function to return daya of the week as integer
