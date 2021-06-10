@@ -40,7 +40,7 @@ as.data.table <- function(x) {
     if (!requireNamespace("data.table", quietly=TRUE)) {
         stop("Cannot covert to 'data.table' without the 'data.table' package.", call.=FALSE)
     }
-    UseMethod("as.data.table")
+    UseMethod("as.data.table", x)
 }
 
 ##' @rdname as.data.table.xts
