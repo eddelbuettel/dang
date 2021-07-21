@@ -7,7 +7,8 @@
   \itemize{
     \item New function \code{intradayMarketMonitor} based on an earlier
     gist-posted snippet by Josh Ulrich.
-    \item The CI setup was generalized as a test for `r-ci` and is used
+    \item The CI setup was generalized as a test for
+    \href{https://eddelbuettel.github.io/r-ci/}{r-ci} and is used
     essentially unchanged with three different providers.
   }
 }
