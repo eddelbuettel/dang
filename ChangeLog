@@ -1,5 +1,9 @@
 2021-08-29  Dirk Eddelbuettel  <edd@debian.org>
 
+	* src/rollMinMax.cpp: Rolling min/max using 'NumVec' from tinyCpp
+	* R/rollMinMax.R: Minimal R caller
+	* man/rollMinMax.Rd: Documentation
+
 	* .editorconfig: Added
 	* .Rbuildignore: Updated accordingly
 
