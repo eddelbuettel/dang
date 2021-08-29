@@ -7,3 +7,4 @@ R/lsb.R
 ^run.sh
 ^\.github
 ^\.ci
+^\.editorconfig

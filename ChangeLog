@@ -1,3 +1,8 @@
+2021-08-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .editorconfig: Added
+	* .Rbuildignore: Updated accordingly
+
 2021-07-21  Dirk Eddelbuettel  <edd@debian.org>
 
 	* inst/NEWS.Rd: Correct formatting in one NEWS.Rd item
