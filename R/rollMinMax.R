@@ -15,5 +15,5 @@
 ##' (length(window) - 1) containing NAs.
 ##' @author Dirk Eddelbuettel for this version, R Core for the underlying code
 rollMinMax <- function(x, window, min=TRUE) {
-    .Call("_rollMinMax", window, min)
+    .Call("_rollMinMax", x, window, min)
 }

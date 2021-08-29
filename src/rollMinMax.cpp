@@ -41,7 +41,7 @@ extern "C" {
     // But in order to provide a clean C interface we wrap an outer SEXP
     // function around it we can refer from C without reference to C++ types
 
-    R::NumVec rollMinMax(R::NumVec x, int window, bool isMin); // forward declaration
+    tidy::NumVec rollMinMax(tidy::NumVec x, int window, bool isMin); // forward declaration
 
     // this SEXP variant is reference from init.c
     SEXP _rollMinMax(SEXP x, SEXP window, SEXP isMin) {
@@ -49,10 +49,10 @@ extern "C" {
     }
 
     // Calculates rolling window for {minimum, maximum}
-    R::NumVec rollMinMax(R::NumVec x, int window, bool isMin=TRUE) {
+    tidy::NumVec rollMinMax(tidy::NumVec x, int window, bool isMin=TRUE) {
 
         int n  = R::length(x);
-        R::NumVec rollx(n);
+        tidy::NumVec rollx(n);
 
         std::deque< std::pair<long double, int> > deck;
         for (int i = 0; i < n; ++i) {
