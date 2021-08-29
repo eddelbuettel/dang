@@ -1,5 +1,7 @@
 2021-08-29  Dirk Eddelbuettel  <edd@debian.org>
 
+	* .github/workflows/ci.yaml: [Temporary] Use tidyCpp from GitHub
+
 	* src/rollMinMax.cpp: Rolling min/max using 'NumVec' from tinyCpp
 	* R/rollMinMax.R: Minimal R caller
 	* man/rollMinMax.Rd: Documentation
