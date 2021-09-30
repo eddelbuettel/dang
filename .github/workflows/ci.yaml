@@ -33,7 +33,6 @@ jobs:
       - name: Dependencies
         run: |
           ./run.sh install_all
-          ./run.sh install_github eddelbuettel/tidycpp
 
       - name: Test
         run: ./run.sh run_tests

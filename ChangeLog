@@ -1,3 +1,7 @@
+2021-09-30  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/ci.yaml: Back to standard tidyCpp from CRAN
+
 2021-09-20  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/rollMinMax.cpp: Move callable funtion to bottom
