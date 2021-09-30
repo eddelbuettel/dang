@@ -43,11 +43,6 @@ extern "C" {
 
     tidy::NumVec rollMinMax(tidy::NumVec x, int window, bool isMin); // forward declaration
 
-    // this SEXP variant is reference from init.c
-    SEXP _rollMinMax(SEXP x, SEXP window, SEXP isMin) {
-        return SEXP(rollMinMax(x, R::asInteger(window), R::asLogical(isMin)));
-    }
-
     // Calculates rolling window for {minimum, maximum}
     tidy::NumVec rollMinMax(tidy::NumVec x, int window, bool isMin=TRUE) {
 
@@ -77,6 +72,11 @@ extern "C" {
             }
         }
         return rollx;
+    }
+
+    // this SEXP variant is referenced from init.c and callable from R
+    SEXP _rollMinMax(SEXP x, SEXP window, SEXP isMin) {
+        return rollMinMax(x, R::asInteger(window), R::asLogical(isMin));
     }
 
 }

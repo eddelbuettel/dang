@@ -1,3 +1,7 @@
+2021-09-20  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/rollMinMax.cpp: Move callable funtion to bottom
+
 2021-08-29  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Roll minor version
