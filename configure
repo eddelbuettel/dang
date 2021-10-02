@@ -1,0 +1,13 @@
+#!/bin/sh
+
+[ ! -d .git/ ] && exit 0
+[ ! -d R/ ] && exit 0
+[ "x`which git`" = "x" ] && exit 0
+[ "x`which awk`" = "x" ] && exit 0
+
+git log --format=fuller | awk '
+/^commit / { printf(".git <- c(sha=\"%s\", ", substr($2,1,7)) }
+/^CommitDate: / { printf("date=\"%s %s %s %s %s %s\")\n", $2, $3, $4, $5, $6, $7); exit }
+' > R/git_sha_date.R
+
+exit 0

@@ -1,3 +1,8 @@
+2021-10-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* configure: Use git and awk to create timestamp from source repo
+	* R/git_sha_date.R: Generated file
+
 2021-09-30  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .github/workflows/ci.yaml: Back to standard tidyCpp from CRAN
