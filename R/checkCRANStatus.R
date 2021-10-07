@@ -71,7 +71,7 @@ checkCRANStatus <- function(email, cache, cache.life=24 * 3600) {
             vapply(regmatches(x, submatch), "[[", character(1L), 2)
         })
         res.mx <- t(gsub("<[^>]*>|^\\s+|\\s+$", "", res))
-        res.mx.2 <- res.mx[-1, ]
+        res.mx.2 <- res.mx[-1, , drop = FALSE]
         colnames(res.mx.2) <- res.mx[1, ]
         res.df <- as.data.frame(res.mx.2, stringsAsFactors=FALSE)
         saveRDS(list(Sys.time(), res.df), cache)
