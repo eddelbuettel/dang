@@ -1,3 +1,12 @@
+2021-10-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Author): Add Jordan Mark Barbone as contributor
+	* README.md: Add Jordan Mark Barbone
+
+2021-10-07  Jordan Mark Barbone  <jmbarbone@gmail.com>
+
+	* R/checkCRANStatus.R: Add drop=FALSE to prevent vector return
+
 2021-10-02  Dirk Eddelbuettel  <edd@debian.org>
 
 	* configure: Use git and awk to create timestamp from source repo

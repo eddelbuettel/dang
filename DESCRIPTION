@@ -4,7 +4,8 @@ Title: 'Dang' Associated New Goodies
 Version: 0.0.13.2
 Date: 2021-08-29
 Author: Dirk Eddelbuettel with contributions by Brodie Gaslam, Kevin Denny,
- Kabira Namit, Colin Gillespie, R Core, Josh Ulrich, and others.
+ Kabira Namit, Colin Gillespie, R Core, Josh Ulrich, Jordan Mark Barbone,
+ and others.
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: A collection of utility functions.
 URL: https://github.com/eddelbuettel/dang, https://dirk.eddelbuettel.com/code/dang.html

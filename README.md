@@ -1,11 +1,11 @@
 ## dang: Dang Assorted New Goodies
 
-[![Build Status](https://travis-ci.org/eddelbuettel/dang.svg)](https://travis-ci.org/eddelbuettel/dang) 
+[![Build Status](https://travis-ci.org/eddelbuettel/dang.svg)](https://travis-ci.org/eddelbuettel/dang)
 [![CI](https://github.com/eddelbuettel/dang/workflows/ci/badge.svg)](https://github.com/eddelbuettel/dang/actions?query=workflow%3Aci)
 [![Build Status](https://dev.azure.com/eddelbuettel/dang/_apis/build/status/dang)](https://dev.azure.com/eddelbuettel/dang/_build)
-[![Package-License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html) 
-[![CRAN](http://www.r-pkg.org/badges/version/dang)](https://cran.r-project.org/package=dang) 
-[![Dependencies](https://tinyverse.netlify.com/badge/dang)](https://cran.r-project.org/package=dang) 
+[![Package-License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![CRAN](http://www.r-pkg.org/badges/version/dang)](https://cran.r-project.org/package=dang)
+[![Dependencies](https://tinyverse.netlify.com/badge/dang)](https://cran.r-project.org/package=dang)
 [![Downloads](http://cranlogs.r-pkg.org/badges/dang?color=brightgreen)](https://www.r-pkg.org:443/pkg/dang)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/dang)](https://github.com/eddelbuettel/dang)
 
@@ -20,7 +20,7 @@ function I use, or maybe have used at some point.
 
 ### Status
 
-The package tests cleanly as you would expect. 
+The package tests cleanly as you would expect.
 
 ### Author
 
@@ -28,9 +28,10 @@ Dirk Eddelbuettel, plus contributions from others as noted in the respective fil
 
 ### Acknowledgements
 
-Thanks to Josh Ulrich for discussions about `plot.xts`, Brodie Gaslam for discussions about his
-CRAN status checker, Kevin Denny and Kabira Namit for Stata commands demotivate and motivate,
-and possibly others I am omitting -- if your name belongs here email me!
+Thanks to Josh Ulrich for discussions about `plot.xts`, Brodie Gaslam for discussions about his CRAN
+status checker (and Jordan Mark Barbone for a PR with fix to a corner case in it), Kevin Denny and
+Kabira Namit for Stata commands demotivate and motivate, and possibly others I am omitting -- if
+your name belongs here email me!
 
 ### License
 
