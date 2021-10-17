@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# render inactive for now
+exit 0
+
 [ ! -d .git/ ] && exit 0
 [ ! -d R/ ] && exit 0
 [ "x`which git`" = "x" ] && exit 0
