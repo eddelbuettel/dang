@@ -35,44 +35,43 @@
 #include <utility>
 #include <tidyCpp>
 
-extern "C" {
 
-    // Note that NumVec is a trivial class wrapping SEXP inside tidyCpp
-    // But in order to provide a clean C interface we wrap an outer SEXP
-    // function around it we can refer from C without reference to C++ types
+// Note that NumVec is a trivial class wrapping SEXP inside tidyCpp
+// But in order to provide a clean C interface we wrap an outer SEXP
+// function around it we can refer from C without reference to C++ types
 
-    tidy::NumVec rollMinMax(tidy::NumVec x, int window, bool isMin); // forward declaration
+// Calculates rolling window for {minimum, maximum}
+tidy::NumVec rollMinMax(tidy::NumVec x, int window, bool isMin=TRUE) {
 
-    // Calculates rolling window for {minimum, maximum}
-    tidy::NumVec rollMinMax(tidy::NumVec x, int window, bool isMin=TRUE) {
+    int n  = R::length(x);
+    tidy::NumVec rollx(n);
 
-        int n  = R::length(x);
-        tidy::NumVec rollx(n);
-
-        std::deque< std::pair<long double, int> > deck;
-        for (int i = 0; i < n; ++i) {
-            double xv = x[i];
-            if (isMin) {
-                while (!deck.empty() && deck.back().first >= xv)
-                    deck.pop_back();
-            } else {
-                while (!deck.empty() && deck.back().first <= xv)
-                    deck.pop_back();
-            }
-            deck.push_back(std::make_pair(xv, i));
-
-            while(deck.front().second <= i - window)
-                deck.pop_front();
-
-            long double min = deck.front().first;
-            if (i < window - 1) {
-                rollx[i] = NA_REAL;
-            } else {
-                rollx[i] = min;
-            }
+    std::deque< std::pair<long double, int> > deck;
+    for (int i = 0; i < n; ++i) {
+        double xv = x[i];
+        if (isMin) {
+            while (!deck.empty() && deck.back().first >= xv)
+                deck.pop_back();
+        } else {
+            while (!deck.empty() && deck.back().first <= xv)
+                deck.pop_back();
         }
-        return rollx;
+        deck.push_back(std::make_pair(xv, i));
+
+        while(deck.front().second <= i - window)
+            deck.pop_front();
+
+        long double min = deck.front().first;
+        if (i < window - 1) {
+            rollx[i] = NA_REAL;
+        } else {
+            rollx[i] = min;
+        }
     }
+    return rollx;
+}
+
+extern "C" {
 
     // this SEXP variant is referenced from init.c and callable from R
     SEXP _rollMinMax(SEXP x, SEXP window, SEXP isMin) {

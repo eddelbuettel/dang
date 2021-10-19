@@ -1,3 +1,7 @@
+2021-10-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/rollMinMax.cpp: Limit 'extern "C"' to C callable function
+
 2021-10-17  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.0.14
