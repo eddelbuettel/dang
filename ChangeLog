@@ -1,5 +1,7 @@
 2021-10-19  Dirk Eddelbuettel  <edd@debian.org>
 
+ 	* DESCRIPTION (Version, Date): Roll minor version
+
 	* src/rollMinMax.cpp: Limit 'extern "C"' to C callable function
 
 2021-10-17  Dirk Eddelbuettel  <edd@debian.org>
@@ -35,7 +37,7 @@
 2021-08-29  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Roll minor version
-
+<
 	* .github/workflows/ci.yaml: [Temporary] Use tidyCpp from GitHub
 
 	* src/rollMinMax.cpp: Rolling min/max using 'NumVec' from tinyCpp
