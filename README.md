@@ -1,6 +1,5 @@
 ## dang: Dang Assorted New Goodies
 
-[![Build Status](https://travis-ci.org/eddelbuettel/dang.svg)](https://travis-ci.org/eddelbuettel/dang)
 [![CI](https://github.com/eddelbuettel/dang/workflows/ci/badge.svg)](https://github.com/eddelbuettel/dang/actions?query=workflow%3Aci)
 [![Build Status](https://dev.azure.com/eddelbuettel/dang/_apis/build/status/dang)](https://dev.azure.com/eddelbuettel/dang/_build)
 [![Package-License](https://eddelbuettel.github.io/badges/GPL2+.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
