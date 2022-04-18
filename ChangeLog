@@ -1,3 +1,8 @@
+2022-04-18  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/intradayMarketMonitor.R (.show_plot): Use dev.hold() and
+	dev.flush() for much smoother updates with thanks to Paul Murrell
+
 2022-02-05  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/str.language.R: New helper function based on post by Bill Dunlap

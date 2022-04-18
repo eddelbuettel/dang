@@ -33,7 +33,7 @@
 ##'    intradayMarketMonitor()
 ##' }
 intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago") {
-    stopifnot(`The quantmod packages is required.`=requireNamespace("quantmod", quietly=TRUE))
+    stopifnot("The quantmod packages is required." = requireNamespace("quantmod", quietly=TRUE))
 
     x <- NULL
     datafile <- .default_file(symbol)
@@ -125,6 +125,7 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
 }
 
 .show_plot <- function(symbol, x, y) {
+    dev.hold()
     if (!missing(y)) {
         cname <-  paste(symbol, format(y[,"Close"]),
                         round(attr(y, "pct_change"), 5),      # %change
@@ -136,6 +137,7 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
     }
     cs <- quantmod::chart_Series(quantmod::Cl(x), name = cname)
     plot(cs)
+    dev.flush()
 }
 
 .get_data <- function(symbol, tz) {
