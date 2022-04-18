@@ -1,3 +1,11 @@
+2022-02-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/str.language.R: New helper function based on post by Bill Dunlap
+	to r-devel
+	* man/str.language.Rd: Documentation
+	* README.md: Also thank Bill
+	* DESCRIPTION: Idem
+
 2021-11-05  Dirk Eddelbuettel  <edd@debian.org>
 
  	* README.md: Remove Travis badge
