@@ -23,6 +23,7 @@
 ##' package \pkg{quantmod}, default value is \dQuote{^GSPC}.
 ##' @param defaultTZ A character variable with the (local) timezone used for displaying
 ##' the data, default value is \dQuote{America/Chicagp}.
+##' @param sleep An optional numerical value for the delay between updates, default is 10.
 ##' @return Nothing is returned, but a display of the current price and the recent history
 ##' is updated, and the loops loops \sQuote{forever}.
 ##' @seealso \url{https://gist.github.com/joshuaulrich/ee11ef67b1461df399b84efd3c8f9f67#file-intraday-sp500-r}
@@ -32,7 +33,7 @@
 ##'    suppressMessages({library(xts);library(quantmod)})  # dampen noise, add dang as needed
 ##'    intradayMarketMonitor()
 ##' }
-intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago") {
+intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago", sleep=10) {
     stopifnot("The quantmod packages is required." = requireNamespace("quantmod", quietly=TRUE))
 
     x <- NULL
@@ -96,7 +97,7 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
             }
         }
         if (nrow(x) >= 4) .show_plot(symbol, x, y)
-        Sys.sleep(10)
+        Sys.sleep(sleep)
     }
     # may not get here if Ctrl-C aborted
     saveRDS(x, datafile)
@@ -107,7 +108,7 @@ intradayMarketMonitor <- function(symbol = "^GSPC", defaultTZ = "America/Chicago
 .default_file <- function(symbol) {
     nm <- paste0("intraday_", make.names(symbol), ".rds")
     dd <- tools::R_user_dir("dang")
-    if (!dir.exists(dd)) dir.create(dd)
+    if (!dir.exists(dd)) dir.create(dd, recursive=TRUE)
     fname <- file.path(dd, nm)
     fname
 }

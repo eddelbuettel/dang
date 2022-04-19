@@ -4,7 +4,8 @@
 \alias{intradayMarketMonitor}
 \title{Intra-day market monitor}
 \usage{
-intradayMarketMonitor(symbol = "^GSPC", defaultTZ = "America/Chicago")
+intradayMarketMonitor(symbol = "^GSPC", defaultTZ = "America/Chicago",
+  sleep = 10)
 }
 \arguments{
 \item{symbol}{A character variable with symbol understood by \code{getQuote} from
@@ -12,6 +13,8 @@ package \pkg{quantmod}, default value is \dQuote{^GSPC}.}
 
 \item{defaultTZ}{A character variable with the (local) timezone used for displaying
 the data, default value is \dQuote{America/Chicagp}.}
+
+\item{sleep}{An optional numerical value for the delay between updates, default is 10.}
 }
 \value{
 Nothing is returned, but a display of the current price and the recent history
