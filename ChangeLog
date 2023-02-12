@@ -1,3 +1,9 @@
+2023-02-12  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/shadowedPackages.R (shadowedPackages): New function to find
+	packages from more than .libPaths() directory
+	* man/shadowedPackages.Rd: New documentation
+
 2022-11-05  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .github/workflows/ci.yaml (jobs): Update to actions/checkout@v3
