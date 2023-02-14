@@ -1,3 +1,9 @@
+2023-02-14  Dirk Eddelbuettel  <edd@debian.org>
+
+ 	* DESCRIPTION (Version, Date): Roll minor version
+
+	* R/shadowedPackages.R: Revert back to initial data.table approach
+
 2023-02-12  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/shadowedPackages.R (shadowedPackages): New function to find
