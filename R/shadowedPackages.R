@@ -1,4 +1,4 @@
-##' Return a data.frame object with \sQuote{shadowed} packages,
+##' Return a data.table object with \sQuote{shadowed} packages,
 ##' meaning package which are installed in more than directory on the
 ##' \code{.libPaths}.
 ##'
@@ -10,24 +10,15 @@
 ##' @return data.table object with packages that are shadowed
 ##' @author Dirk Eddelbuettel
 shadowedPackages <- function() {
-    ## if (!requireNamespace("data.table", quietly=TRUE)) {
-    ##     message("Please install data.table")
-    ##     return(invisible())
-    ## }
-    ## require(data.table)
-    ## ip <- installed.packages()
-    ## d <- data.table(ip[,1:3])
-    ## d <- d[, Version := as.package_version(Version)]
-    ## d <- d[, n := .N, by = Package]
-    ## d[n > 1, good := Version == max(Version), by = Package][n > 1,]
-
-    ## base R version with a tip-of-the-hat to Vincent Arel-Bundock
+    if (!requireNamespace("data.table", quietly=TRUE)) {
+        message("Please install data.table")
+        return(invisible())
+    }
+    require(data.table)
     ip <- installed.packages()
-    d <- as.data.frame(ip[, 1:3])
-    d$Version <- as.package_version(d$Version)
-    d <- d[duplicated(d$Package) | duplicated(d$Package, fromLast = TRUE), , drop = FALSE]
-    d <- by(d, d$Package, FUN = function(x) transform(x, Latest = Version == max(Version)))
-    d <- do.call(rbind, d)
-    rownames(d) <- NULL
+    d <- data.table(ip[,1:3])
+    d <- d[, Version := as.package_version(Version)]
+    d <- d[, n := .N, by = Package]
+    d[n > 1, good := Version == max(Version), by = Package][n > 1,]
     return(d)
 }
