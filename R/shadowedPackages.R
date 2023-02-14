@@ -14,11 +14,11 @@ shadowedPackages <- function() {
         message("Please install data.table")
         return(invisible())
     }
-    require(data.table)
     ip <- installed.packages()
-    d <- data.table(ip[,1:3])
-    d <- d[, Version := as.package_version(Version)]
-    d <- d[, n := .N, by = Package]
+    d <- data.table::data.table(ip[,1:3])
+    d[, Version := as.package_version(Version)]
+    d[, n := .N, keyby = Package]
     d[n > 1, good := Version == max(Version), by = Package][n > 1,]
-    return(d)
 }
+## Ensure the `[` dispatches to data.table
+.datatable.aware <- TRUE
