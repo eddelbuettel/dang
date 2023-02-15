@@ -18,7 +18,9 @@ shadowedPackages <- function() {
     d <- data.table::data.table(ip[,1:3])
     d[, Version := as.package_version(Version)]
     d[, n := .N, keyby = Package]
-    d[n > 1, good := Version == max(Version), by = Package][n > 1,]
+    d[n > 1, good := Version == max(Version), by = Package]
+    d[, Version := format(Version)]   # data.table 1.14.6 prefers this
+    d[n > 1,]
 }
 ## Ensure the `[` dispatches to data.table
 .datatable.aware <- TRUE

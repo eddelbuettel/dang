@@ -1,3 +1,7 @@
+2023-02-15  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/shadowedPackages.R (shadowedPackages): Format package_version
+
 2023-02-14  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Roll minor version
