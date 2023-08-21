@@ -1,5 +1,8 @@
 2023-08-21  Dirk Eddelbuettel  <edd@debian.org>
 
+	* R/datatable.R (limitDataTableCores): New function
+	* man/limitDataTableCores.Rd: Documentation
+
 	* NAMESPACE: Add additional imports for shadowedPackages()
 	* R/shadowedPackages.R (shadowedPackages): Add a globalVariables()
 

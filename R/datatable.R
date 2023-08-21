@@ -72,3 +72,32 @@ as.data.table.default <- function(x, ...) {
 }
 
 utils::globalVariables(c(":="))
+
+##' Set threads for data.table respecting possible local settings
+##'
+##' This function set the number of threads \pkg{data.table} will use
+##' while reflecting two possible machine-specific settings from the
+##' environment variable \sQuote{OMP_THREAD_LIMIT} as well as the R
+##' option \sQuote{Ncpus} (uses e.g. for parallel builds).
+##' @title Set data.table threads respecting default settingss
+##' @param ncores A numeric or character variable with the desired
+##' count of threads to use
+##' @param verbose A logical value with a default of \sQuote{FALSE} to
+##' operate more verbosely
+##' @return The return value of the \pkg{data.table} function
+##' \code{setDTthreads} which is called as a side-effect.
+##' @author Dirk Eddelbuettel
+limitDataTableCores <- function(ncores, verbose = FALSE) {
+    if (missing(ncores)) {
+        ## start with a simple fallback: 'Ncpus' (if set) or else 2
+        ncores <- getOption("Ncpus", 2L)
+        ## also consider OMP_THREAD_LIMIT (cf Writing R Extensions), gets NA if envvar unset
+        ompcores <- as.integer(Sys.getenv("OMP_THREAD_LIMIT"))
+        ## and then keep the smaller
+        ncores <- min(na.omit(c(ncores, ompcores)))
+    }
+    stopifnot("Package 'data.table' must be installed." = requireNamespace("data.table", quietly=TRUE))
+    stopifnot("Argument 'ncores' must be numeric or character" = is.numeric(ncores) || is.character(ncores))
+    if (verbose) message("Limiting data.table to '", ncores, "'.")
+    data.table::setDTthreads(ncores)
+}
