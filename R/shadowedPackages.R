@@ -24,3 +24,5 @@ shadowedPackages <- function() {
 }
 ## Ensure the `[` dispatches to data.table
 .datatable.aware <- TRUE
+
+utils::globalVariables(c(".N", "Package", "Version", "good", "n"))

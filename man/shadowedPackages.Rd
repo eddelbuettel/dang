@@ -10,7 +10,7 @@ shadowedPackages()
 data.table object with packages that are shadowed
 }
 \description{
-Return a data.frame object with \sQuote{shadowed} packages,
+Return a data.table object with \sQuote{shadowed} packages,
 meaning package which are installed in more than directory on the
 \code{.libPaths}.
 }

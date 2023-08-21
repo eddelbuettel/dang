@@ -1,7 +1,7 @@
 useDynLib(dang, .registration=TRUE)
 
-importFrom("utils", "head", "object.size", "tail", "download.file", "read.table")
-importFrom("grDevices", "rgb", "xy.coords")
+importFrom("utils", "head", "object.size", "tail", "download.file", "read.table", "installed.packages")
+importFrom("grDevices", "rgb", "xy.coords", "dev.flush", "dev.hold")
 importFrom("graphics", "lines", "plot")
 importFrom("stats", "time", "runif", "na.omit")
 
