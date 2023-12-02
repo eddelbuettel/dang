@@ -1,3 +1,22 @@
+2023-12-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.0.16
+
+	* .github/workflows/ci.yaml (jobs): Update to actions/checkout@v4
+
+	* R/datatable.R (as.data.table.xts): Switch to inherits()
+	* R/plotOBOS.R (plotOBOS): Switch to is.character()
+
+	* R/googleFinanceData.R: Update URL
+	* R/readAndConvert.R: Idem
+	* man/googleFinanceData.Rd: Regenerated
+	* man/readAndConvert.Rd: Idem
+
+2023-11-30  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/readAndConvert.cpp (_readAndConvert): Adjust two error() calls
+	to new tidyCpp signature to not trigger -Wformat warnings
+
 2023-08-21  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Roll minor version

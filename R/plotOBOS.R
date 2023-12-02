@@ -1,7 +1,7 @@
 
 ## plotOBOS -- displaying overbough/oversold as eg in Bespoke's plots
 ##
-## Copyright (C) 2010 - 2017  Dirk Eddelbuettel
+## Copyright (C) 2010 - 2023  Dirk Eddelbuettel
 ##
 ## This is free software: you can redistribute it and/or modify it
 ## under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ plotOBOS <- function(symbol, n=50, type=c("sma", "ema", "zlema", "hma"),
                      ticks=TRUE, axes=TRUE) {
 
     today <- Sys.Date()
-    if (class(symbol) == "character") {
+    if (is.character(symbol)) {
         X <- quantmod::getSymbols(symbol, from=format(today-365*years-2*n), auto.assign=FALSE)
         x <- X[,6]                          # use Adjusted
     } else if (inherits(symbol, "zoo")) {
@@ -100,4 +100,3 @@ plotOBOS <- function(symbol, n=50, type=c("sma", "ema", "zlema", "hma"),
     lines(xd, lwd=2, col=fairlylight)   # central smooted location
     lines(x, lwd=3, col=dark)           # actual price, thicker
 }
-

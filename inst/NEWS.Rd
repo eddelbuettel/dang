@@ -3,6 +3,23 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/dang/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/dang/issues/#1}{##1}}
 
+\section{Changes in version 0.0.16 (2023-12-02)}{
+  \itemize{
+    \item Added new function \code{str.language()} based on post by Bill Dunlap
+    \item Added new argument \code{sleep} in \code{intradayMarketMonitor}
+    \item Switched to \code{dev.hold()} and \code{dev.flush()} in
+    \code{intradayMarketMonitor} with thanks to Paul Murrell
+    \item Updated continued integration setup, twice, and package badges
+    \item Added new function \code{shadowedPackages}
+    \item Added new function \code{limitDataTableCores}
+    \item Updated two \code{error()} calls to updated \pkg{tidyCpp} signature
+    to not tickle \code{-Wformat} warnings under R-devel
+    \item Updated two URL to please link checks in R-devel
+    \item Switch two tests for variable of variable to \code{is.*} and
+    \code{inherits()}, respectively
+  }
+}
+
 \section{Changes in version 0.0.15 (2021-10-26)}{
   \itemize{
     \item Corrected scope of 'extern "C"' declaration to the actually C-callable

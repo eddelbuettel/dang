@@ -15,7 +15,7 @@ as.data.table.xts <- function(x) {
     if (!requireNamespace("zoo", quietly=TRUE) || !requireNamespace("data.table", quietly=TRUE)) {
         stop("Cannot covert to 'data.table' without the 'zoo' package.", call.=FALSE)
     }
-    if (class(zoo::index(x)) == "Date") {
+    if (inherits(zoo::index(x), "Date")) {
         date <- NULL
         dt <-  data.table::data.table(date = data.table::as.IDate(zoo::index(x)),
                                       zoo::coredata(x))
