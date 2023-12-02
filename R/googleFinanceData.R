@@ -15,7 +15,7 @@
 ##' @param ed An optional integer value for the end day, required if \code{current} is false
 ##' @return A \code{data.table} object with a key on \code{date}
 ##' @seealso The post at
-##' \url{https://chrisconlan.com/download-historical-stock-data-google-r-python/}
+##' \url{https://web.archive.org/web/20221007040328/https://chrisconlan.com/download-historical-stock-data-google-r-python/}
 ##' provided the initial starting point
 ##' @author Dirk Eddelbuettel
 googleFinanceData <- function(sym, current = TRUE, sy = 2005, sm = 1, sd = 1, ey, em, ed) {
@@ -50,13 +50,3 @@ googleFinanceData <- function(sym, current = TRUE, sy = 2005, sm = 1, sd = 1, ey
 
     return(data)
 }
-
-
-
-
-
-
-
-
-
-

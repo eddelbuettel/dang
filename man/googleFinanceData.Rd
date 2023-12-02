@@ -36,7 +36,7 @@ Google to download historical data.
 }
 \seealso{
 The post at
-\url{https://chrisconlan.com/download-historical-stock-data-google-r-python/}
+\url{https://web.archive.org/web/20221007040328/https://chrisconlan.com/download-historical-stock-data-google-r-python/}
 provided the initial starting point
 }
 \author{
