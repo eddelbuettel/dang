@@ -35,7 +35,8 @@ SEXP _readAndConvert(SEXP filesexp, SEXP encsexp) {
 
     void* iconv_handle = Riconv_open("UTF-8", encoding.c_str());
     if (iconv_handle == ((void*) -1)) {
-        R::error("Can't convert from '%s' to 'UTF-8'", encoding.c_str());
+        std::string s = std::string("Can't convert from '") + encoding + std::string("' to 'UTF-8'");
+        R::error(s.c_str());
     }
 
     const char* in_buffer = str_source.c_str();
@@ -48,7 +49,8 @@ SEXP _readAndConvert(SEXP filesexp, SEXP encsexp) {
     Riconv_close(iconv_handle);
 
     if (result == ((size_t) -1) || (in_bytes_left != 0)) {
-        R::error("Failed to convert file contents to UTF-8");
+        std::string s = std::string("Failed to convert file contents to UTF-8");
+        R::error(s.c_str());
     }
 
     std::string s(utf8_buffer, len - out_bytes_left);
