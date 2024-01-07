@@ -1,5 +1,7 @@
 2024-01-07  Dirk Eddelbuettel  <edd@debian.org>
 
+ 	* DESCRIPTION (Version, Date): Roll minor version and date
+
 	* R/reorderMicrobenchmarkResults.R (reorderMicrobenchmarkResults):
 	New function to reorder microbenchmark resuls; also rmr as alias
 

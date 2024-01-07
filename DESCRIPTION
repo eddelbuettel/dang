@@ -1,8 +1,8 @@
 Package: dang
 Type: Package
 Title: 'Dang' Associated New Goodies
-Version: 0.0.16
-Date: 2023-12-02
+Version: 0.0.16.1
+Date: 2024-01-07
 Author: Dirk Eddelbuettel with contributions by Brodie Gaslam, Kevin Denny,
  Kabira Namit, Colin Gillespie, R Core, Josh Ulrich, Jordan Mark Barbone,
  Bill Dunlap, and others.
