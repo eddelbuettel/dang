@@ -39,7 +39,7 @@ checkCRANStatus <- function(email, cache, cache.life=24 * 3600) {
     if (missing(cache)) cache <- tempfile(pattern="cran-status", fileext=".rds")
 
     url <- sprintf("https://cran.r-project.org/web/checks/check_results_%s.html",
-                   gsub("[^A-Za-z0-9_:.-]", "_", sub("@", "_at_", email)))
+                   gsub("[^A-Za-z0-9_:.-]", "_", sub("@", "_at_", tolower(email))))
 
     display_check <- function(x, extra=NULL) {
         print(x)
