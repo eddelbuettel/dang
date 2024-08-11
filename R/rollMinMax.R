@@ -13,7 +13,8 @@
 ##' @param min A logical which, if true, selects minimum, else maximum
 ##' @return A vector of the same length as 'x' with elements 1 to
 ##' (length(window) - 1) containing NAs.
-##' @author Dirk Eddelbuettel for this version, R Core for the underlying code
+##' @author Dirk Eddelbuettel for this version, extending earlier by
+##' Charlie Gao crediting Andrew Uhl.
 rollMinMax <- function(x, window, min=TRUE) {
     .Call("_rollMinMax", x, window, min)
 }

@@ -27,5 +27,6 @@ The \pkg{ichimoku} variant is by Charlie Gao and credits Andrew Uhl for
 the initial implementation.
 }
 \author{
-Dirk Eddelbuettel for this version, R Core for the underlying code
+Dirk Eddelbuettel for this version, extending earlier by
+Charlie Gao crediting Andrew Uhl.
 }

@@ -5,7 +5,7 @@ Version: 0.0.16.2
 Date: 2024-06-27
 Author: Dirk Eddelbuettel with contributions by Brodie Gaslam, Kevin Denny,
  Kabira Namit, Colin Gillespie, R Core, Josh Ulrich, Jordan Mark Barbone,
- Bill Dunlap, and others.
+ Charlie Gao, Bill Dunlap, and others.
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: A collection of utility functions.
 URL: https://github.com/eddelbuettel/dang, https://dirk.eddelbuettel.com/code/dang.html
