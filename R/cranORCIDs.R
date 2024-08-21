@@ -2,8 +2,8 @@
 
 ##' @title Get ORCID IDs known at CRAN
 ##'
-##' This function returns a three-column data frame with first name, family name and orcid
-##' for all maintainers with (optional) ORCID fields at CRAN.
+##' @description This function returns a three-column data frame with first name, family name and
+##' orcid for all maintainers with (optional) ORCID fields at CRAN.
 ##'
 ##' @return A data frame with three columns given (ie first name), family (name) and oid.
 ##' @author Kurt Hornik (plus small tweaks by Dirk Eddelbuettel)
@@ -12,11 +12,15 @@ cranORCIDs <- function() {
 
     ## Kurt Hornik, 2024-08-20
     ## plus farmed out functions, first one on in r-devel's tools right now
-    .ORCID_iD_canonicalize <- function (x) sub(tools:::.ORCID_iD_variants_regexp, "\\3", x)
+    .ORCID_iD_canonicalize <- function (x) {
+        .ORCID_iD_variants_regexp <- yoink("tools", ".ORCID_iD_variants_regexp")
+        sub(.ORCID_iD_variants_regexp, "\\3", x)
+    }
     ## used in lapply below
     .get_person_object <- function(a) {
         if(!is.na(a)) {
-            a <- tryCatch(utils:::.read_authors_at_R_field(a), error = identity)
+            .read_authors_at_R_field <- yoink("utils", ".read_authors_at_R_field")
+            a <- tryCatch(.read_authors_at_R_field(a), error = identity)
             if (inherits(a, "person"))
                 return(a)
         }
@@ -30,6 +34,8 @@ cranORCIDs <- function() {
               family = paste(e$family, collapse = " "),
               oid = unname(.ORCID_iD_canonicalize(o)))
     }
+    ## A classic, and you-know-who-wrote-it
+    yoink <- function(package, symbol) do.call(":::", list(package, symbol))
 
     x <- tools::CRAN_package_db()
     a <- lapply(x[["Authors@R"]], .get_person_object)
