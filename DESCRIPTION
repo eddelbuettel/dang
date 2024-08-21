@@ -19,7 +19,8 @@ Authors@R: c(person("Dirk", "Eddelbuettel", role = c("aut", "cre"), email = "edd
              person("Andrew", "Uhl", role = "ctb", comment = "Initial 'rollMinMax' implementation"),
              person("Dewey", "Dunnington", role = "ctb", comment = "Initial code for 'readAndConvert() via 'iconv'"),
              person("Paul", "Murrell", role = "ctb", comment = "Crucual hint about 'dev.hold()' and 'dev.flush()'"),
-             person("Bill", "Dunlap", role = "ctb", comment = "'str.language' function"))
+             person("Bill", "Dunlap", role = "ctb", comment = "'str.language' function"),
+             person("Kurt", "Hornik", role = "ctb", comment = "Basis of 'cranORCIDs' function"))
 Description: A collection of utility functions.
 URL: https://github.com/eddelbuettel/dang, https://dirk.eddelbuettel.com/code/dang.html
 BugReports: https://github.com/eddelbuettel/dang/issues

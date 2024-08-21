@@ -1,3 +1,10 @@
+2024-08-21  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/cranORCIDs.R: New function to fetch CRAN ORCIDs (with thanks to
+	Kurt Hornik for two inital emails)
+	* man/cranORCIDs.Rd: Documentation
+	* DESCRIPTION (Authors@R): Added Kurt Hornik as 'ctb'
+
 2024-08-14  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Authors@R): Added
