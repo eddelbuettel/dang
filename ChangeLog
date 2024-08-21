@@ -1,5 +1,7 @@
 2024-08-21  Dirk Eddelbuettel  <edd@debian.org>
 
+ 	* DESCRIPTION (Version, Date): Roll micro version and date
+
 	* R/cranORCIDs.R: New function to fetch CRAN ORCIDs (with thanks to
 	Kurt Hornik for two inital emails)
 	* man/cranORCIDs.Rd: Documentation
