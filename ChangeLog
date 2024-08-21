@@ -5,6 +5,8 @@
 	* man/cranORCIDs.Rd: Documentation
 	* DESCRIPTION (Authors@R): Added Kurt Hornik as 'ctb'
 
+	* DESCRIPTION (Authors@R): Added several ORCID IDs
+
 2024-08-14  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Authors@R): Added
