@@ -1,3 +1,9 @@
+2025-08-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/googleFinanceData.R: Removed as (unofficial) API access point no
+	longer works
+	* man/googleFinanceData.Rd: Idem
+
 2024-12-16  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .github/workflows/ci.yaml: Simplify to r-ci with included bootstrap
