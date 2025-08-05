@@ -12,7 +12,9 @@
     by Kurt Hornik
     \item Switched to using Authors@R in DESCRIPTION and added ORCIDs where
     available
-    \item Switchet to \code{r-ci} action which include the bootstrap step
+    \item Switched to \code{r-ci} action which include the bootstrap step
+    \item Removed \code{googleFinanceData} as the (unofficial) API access
+    point no longer works
   }
 }
 
