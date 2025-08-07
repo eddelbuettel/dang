@@ -1,3 +1,9 @@
+2025-08-07  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/muteTweets.R: Removed as the API had long been turned off
+	* man/muteTweeters.Rd: Ditto
+ 	* DESCRIPTION (Authors@R): Also remove contributor credit well
+
 2025-08-05  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Roll micro version and date
@@ -5,6 +11,7 @@
 	* R/googleFinanceData.R: Removed as (unofficial) API access point no
 	longer works
 	* man/googleFinanceData.Rd: Idem
+ 	* DESCRIPTION (Authors@R): Also remove contributor credit well
 
 2024-12-16  Dirk Eddelbuettel  <edd@debian.org>
 
