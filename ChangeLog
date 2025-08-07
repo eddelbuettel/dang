@@ -4,6 +4,9 @@
 	* man/muteTweeters.Rd: Ditto
  	* DESCRIPTION (Authors@R): Also remove contributor credit well
 
+	* .github/workflows/ci.yaml (jobs): Add a (commented-out) step calling
+	showing logs in case of error
+
 2025-08-05  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Roll micro version and date
