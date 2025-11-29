@@ -1,3 +1,7 @@
+2025-11-29  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/ci.yaml: Switch to actions/checkout@v6
+
 2025-08-07  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/muteTweets.R: Removed as the API had long been turned off
