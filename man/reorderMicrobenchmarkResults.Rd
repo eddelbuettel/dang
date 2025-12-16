@@ -5,14 +5,14 @@
 \alias{rmr}
 \title{Reorder microbenchmark Results}
 \usage{
-reorderMicrobenchmarkResults(res, order = "median")
+reorderMicrobenchmarkResults(res, ordervar = "median")
 
-rmr(res, order = "median")
+rmr(res, ordervar = "median")
 }
 \arguments{
 \item{res}{An object returned from `microbenchmark::microbenchmark`}
 
-\item{order}{An option character variable selecting a column to order on,
+\item{ordervar}{An option character variable selecting a column to order on,
 defaults to 'median'}
 }
 \value{

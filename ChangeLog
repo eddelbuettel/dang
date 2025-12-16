@@ -1,3 +1,7 @@
+2025-12-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/reorderMicrobenchmarkResults.R: Use 'ordervar' to order
+
 2025-11-29  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .github/workflows/ci.yaml: Switch to actions/checkout@v6
