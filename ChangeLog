@@ -1,3 +1,7 @@
+2025-12-18  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.0.17
+
 2025-12-16  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/reorderMicrobenchmarkResults.R: Use 'ordervar' to order
@@ -10,7 +14,7 @@
 
 	* R/muteTweets.R: Removed as the API had long been turned off
 	* man/muteTweeters.Rd: Ditto
- 	* DESCRIPTION (Authors@R): Also remove contributor credit well
+ 	* DESCRIPTION (Authors@R): Also remove contributor credit
 
 	* .github/workflows/ci.yaml (jobs): Add a (commented-out) step calling
 	showing logs in case of error
