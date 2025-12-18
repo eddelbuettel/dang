@@ -2,6 +2,8 @@
 
 	* DESCRIPTION (Version, Date): Release 0.0.17
 
+	* README.md: Add r-universe badge
+
 2025-12-16  Dirk Eddelbuettel  <edd@debian.org>
 
 	* R/reorderMicrobenchmarkResults.R: Use 'ordervar' to order

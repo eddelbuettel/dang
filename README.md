@@ -3,6 +3,7 @@
 [![CI](https://github.com/eddelbuettel/dang/workflows/ci/badge.svg)](https://github.com/eddelbuettel/dang/actions?query=workflow%3Aci)
 [![Package-License](https://eddelbuettel.github.io/badges/GPL2+.svg)](https://www.r-project.org/Licenses/GPL-2)
 [![CRAN](https://www.r-pkg.org/badges/version/dang)](https://cran.r-project.org/package=dang)
+[![r-universe](https://eddelbuettel.r-universe.dev/badges/dang)](https://eddelbuettel.r-universe.dev/dang)
 [![Dependencies](https://tinyverse.netlify.app/badge/dang)](https://cran.r-project.org/package=dang)
 [![Downloads](https://cranlogs.r-pkg.org/badges/dang?color=brightgreen)](https://www.r-pkg.org:443/pkg/dang)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/dang)](https://github.com/eddelbuettel/dang)
