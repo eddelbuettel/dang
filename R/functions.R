@@ -12,7 +12,7 @@
 ##' @author Dirk Eddelbuettel
 assignFormals <- function(f, env=.GlobalEnv) {
     ff <- formals(f)
-    for (n in names(ff)) {
+    for (n in names(ff[!sapply(ff, is.symbol)])) {
         txt <- sprintf("%s <- %s", n, eval(ff[[n]]))
         assign(n, eval(ff[[n]]), envir=env)
     }
