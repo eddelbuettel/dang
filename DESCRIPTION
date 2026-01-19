@@ -1,8 +1,8 @@
 Package: dang
 Type: Package
 Title: 'Dang' Associated New Goodies
-Version: 0.0.17
-Date: 2025-12-18
+Version: 0.0.17.1
+Date: 2026-01-19
 Authors@R: c(person("Dirk", "Eddelbuettel", role = c("aut", "cre"), email = "edd@debian.org",
                     comment = c(ORCID = "0000-0001-6419-907X")),
              person("Petr", "Pikal", role = "ctb", comment = "Initial code for 'ls.objects()"),
