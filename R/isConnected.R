@@ -9,7 +9,7 @@
 ##' function.
 ##' @title Is the current session (networked) and connected?
 ##' @param site Character variable with site to try to connect to,
-##' defauls to \code{http://www.google.com}
+##' defaults to \code{http://www.google.com}
 ##' @return A boolean value indicating networking status
 ##' @author Dirk Eddelbuettel
 isConnected <- function(site="https://www.google.com") {

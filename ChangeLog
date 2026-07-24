@@ -1,3 +1,8 @@
+2026-07-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* R/isConnected.R: Correct one-char typo
+	* man/isConnected.Rd: Regenerated
+
 2026-01-19  Dirk Eddelbuettel  <edd@debian.org>
 
  	* DESCRIPTION (Version, Date): Roll micro version and date

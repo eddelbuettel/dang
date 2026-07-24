@@ -8,7 +8,7 @@ isConnected(site = "https://www.google.com")
 }
 \arguments{
 \item{site}{Character variable with site to try to connect to,
-defauls to \code{http://www.google.com}}
+defaults to \code{http://www.google.com}}
 }
 \value{
 A boolean value indicating networking status
